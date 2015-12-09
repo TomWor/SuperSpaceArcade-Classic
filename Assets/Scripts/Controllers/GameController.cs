@@ -30,6 +30,7 @@ public class GameController : SceneController
 
     public void Start()
     {
+        GameController.currentStressLevel = 0;
 
         SRDebug.Instance.PanelVisibilityChanged += visible =>
         {
@@ -66,7 +67,7 @@ public class GameController : SceneController
     {
         while(true)
         {
-            yield return new WaitForSeconds(10.0f);
+            yield return new WaitForSeconds(15.0f);
 
             GameController.currentStressLevel++;
             //Debug.Log("Entering Level: "+GameController.currentStressLevel);
