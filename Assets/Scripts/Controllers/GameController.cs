@@ -52,15 +52,22 @@ public class GameController : SceneController
 
         EventManager.PlayerSpawned(GameController.Player);
 
+		this.setInitialStressLevel();
         StartCoroutine(this.UpdateStressLevel());
     }
 
 
     public void OnLevelWasLoaded()
     {
+		this.setInitialStressLevel();
+    }
+
+
+	private void setInitialStressLevel()
+	{
         GameController.currentStressLevel = 0;
         SceneController.currentTrackBorderColor = this.stressLevelColors[GameController.currentStressLevel];
-    }
+	}
 
 
     public IEnumerator UpdateStressLevel()
