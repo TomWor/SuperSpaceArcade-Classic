@@ -62,7 +62,7 @@ public class SideSpawn : MonoBehaviour
             this.OnTrackBorderColorChanged(GameController.currentTrackBorderColor);
         }
     }
-    
+
 
 	public void Despawn()
 	{

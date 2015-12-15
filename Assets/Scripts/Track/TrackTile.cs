@@ -33,6 +33,7 @@ public class TrackTile : MonoBehaviour
     public string poolName = "Track";
 
     // poolName For The debris spawns
+	[HideInInspector]
     public string debrisPoolName = "Spawns";
 
     // The tiles 'stressLevel' indicates which difficulty level the game has
@@ -72,6 +73,7 @@ public class TrackTile : MonoBehaviour
 
     public void Awake()
     {
+        this.cachedTransform = this.transform;
         this.vertexColorComponents = this.GetComponentsInChildren<ChangeVertexColor>();
     }
 
@@ -90,19 +92,19 @@ public class TrackTile : MonoBehaviour
     */
     public void OnSpawned()
     {
-        this.cachedTransform = this.transform;
-        this.spawnPoints = this.cachedTransform.GetComponentsInChildren<SpawnPoint>();
         this.sideSpawnPoints = this.cachedTransform.GetComponentsInChildren<SideSpawnPoint>();
+
+        foreach (SideSpawnPoint sideSpawnPoint in this.sideSpawnPoints)
+        {
+            sideSpawnPoint.Spawn();
+        }
+
+        this.spawnPoints = this.cachedTransform.GetComponentsInChildren<SpawnPoint>();
 
         foreach (SpawnPoint spawnPoint in this.spawnPoints)
         {
             //Debug.Log ("Spawnpoint position: " + spawnPoint.transform.position.ToString ());
             spawnPoint.Spawn();
-        }
-
-        foreach (SideSpawnPoint sideSpawnPoint in this.sideSpawnPoints)
-        {
-            sideSpawnPoint.Spawn();
         }
 
         foreach (ChangeVertexColor vertexColorComponent in this.vertexColorComponents)
