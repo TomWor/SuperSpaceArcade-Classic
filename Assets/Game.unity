@@ -8,25 +8,25 @@ SceneSettings:
   m_PVSPortalsArray: []
   m_OcclusionBakeSettings:
     smallestOccluder: 5
-    smallestHole: .25
+    smallestHole: 0.25
     backfaceThreshold: 100
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
   m_Fog: 0
-  m_FogColor: {r: .880596995, g: .919841349, b: 1, a: 1}
+  m_FogColor: {r: 0.880597, g: 0.91984135, b: 1, a: 1}
   m_FogMode: 2
-  m_FogDensity: .00200000009
+  m_FogDensity: 0.002
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: .889705896, g: .963488817, b: 1, a: 1}
-  m_AmbientEquatorColor: {r: .816176474, g: .885902643, b: 1, a: 1}
-  m_AmbientGroundColor: {r: .816176474, g: .885902643, b: 1, a: 1}
+  m_AmbientSkyColor: {r: 0.8897059, g: 0.9634888, b: 1, a: 1}
+  m_AmbientEquatorColor: {r: 0.8161765, g: 0.88590264, b: 1, a: 1}
+  m_AmbientGroundColor: {r: 0.8161765, g: 0.88590264, b: 1, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SkyboxMaterial: {fileID: 2100000, guid: f91e42a9670d04012984500cd6c6e471, type: 2}
-  m_HaloStrength: .5
+  m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -40,7 +40,7 @@ RenderSettings:
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 5
+  serializedVersion: 6
   m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
@@ -60,13 +60,13 @@ LightmapSettings:
     m_TextureHeight: 1024
     m_AOMaxDistance: 1
     m_Padding: 2
-    m_CompAOExponent: 5.30000019
+    m_CompAOExponent: 5.3
     m_LightmapParameters: {fileID: 0}
     m_TextureCompression: 0
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightmapSnapshot: {fileID: 0}
+  m_LightingDataAsset: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
 NavMeshSettings:
@@ -77,7 +77,7 @@ NavMeshSettings:
     agentRadius: 10
     agentHeight: 10
     agentSlope: 45
-    agentClimb: .400000006
+    agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     accuratePlacement: 0
@@ -114,11 +114,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1279592645}
   m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 100, y: 30}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &97782609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,9 +143,10 @@ MonoBehaviour:
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 1
+    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -197,7 +198,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -278,6 +279,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -288,6 +290,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -298,6 +301,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -308,6 +312,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &110474354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,7 +440,7 @@ MonoBehaviour:
       songName: Explosion 2
       resourceFileName: 
       volume: 1
-      pitch: 2.56999993
+      pitch: 2.57
       isExpanded: 0
       isLoop: 0
       customStartTime: 0
@@ -473,9 +478,9 @@ MonoBehaviour:
   showMusicDucking: 0
   enableMusicDucking: 0
   musicDuckingSounds: []
-  defaultRiseVolStart: .5
+  defaultRiseVolStart: 0.5
   defaultUnduckTime: 1
-  defaultDuckedVolumeMultiplier: .5
+  defaultDuckedVolumeMultiplier: 0.5
   crossFadeTime: 1
   _masterPlaylistVolume: 1
   showGroupSelect: 0
@@ -499,7 +504,7 @@ Transform:
   - {fileID: 1205267885}
   - {fileID: 918435032}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
 --- !u!1 &124621290
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +559,7 @@ MonoBehaviour:
   chainLoopMode: 0
   chainLoopNumLoops: 0
   useDialogFadeOut: 0
-  dialogFadeOutTime: .5
+  dialogFadeOutTime: 0.5
   curVariationSequence: 0
   useInactivePeriodPoolRefill: 0
   inactivePeriodSeconds: 5
@@ -569,7 +574,7 @@ MonoBehaviour:
   childSoundGroups: []
   limitMode: 0
   limitPerXFrames: 1
-  minimumTimeBetween: .5
+  minimumTimeBetween: 0.5
   useClipAgePriority: 0
   limitPolyphony: 0
   voiceLimitCount: 1
@@ -605,7 +610,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &171662205
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,12 +633,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 171662205}
-  m_LocalRotation: {x: .815560043, y: -.311033934, z: .387144059, w: .297051042}
+  m_LocalRotation: {x: 0.81556004, y: -0.31103393, z: 0.38714406, w: 0.29705104}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!108 &171662207
 Light:
   m_ObjectHideFlags: 0
@@ -644,7 +649,7 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .200000003
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -654,6 +659,7 @@ Light:
     m_Strength: 1
     m_Bias: 1
     m_NormalBias: 0
+    m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -878,6 +884,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -888,6 +895,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -898,6 +906,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -908,6 +917,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!82 &423596214
 AudioSource:
   m_ObjectHideFlags: 0
@@ -948,6 +958,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -958,6 +969,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -968,6 +980,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -978,6 +991,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &423596215
 Transform:
   m_ObjectHideFlags: 0
@@ -989,7 +1003,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
 --- !u!1001 &428239709
 Prefab:
   m_ObjectHideFlags: 0
@@ -1105,11 +1119,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2028745915}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: .5}
-  m_AnchorMax: {x: 1, y: .5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -1}
   m_SizeDelta: {x: 0, y: 10}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &452361367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,9 +1148,10 @@ MonoBehaviour:
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 1
+    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -1185,7 +1200,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -5}
   m_SizeDelta: {x: 0, y: -10}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &641277010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1210,9 +1225,10 @@ MonoBehaviour:
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
+    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -1255,7 +1271,7 @@ Transform:
   - {fileID: 576289672}
   - {fileID: 1346347000}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
 --- !u!1 &892795377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,7 +1305,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -5}
   m_SizeDelta: {x: 0, y: -10}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &892795379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1314,9 +1330,10 @@ MonoBehaviour:
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
+    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -1384,7 +1401,7 @@ MonoBehaviour:
   chainLoopMode: 0
   chainLoopNumLoops: 0
   useDialogFadeOut: 0
-  dialogFadeOutTime: .5
+  dialogFadeOutTime: 0.5
   curVariationSequence: 0
   useInactivePeriodPoolRefill: 0
   inactivePeriodSeconds: 5
@@ -1399,7 +1416,7 @@ MonoBehaviour:
   childSoundGroups: []
   limitMode: 0
   limitPerXFrames: 1
-  minimumTimeBetween: .5
+  minimumTimeBetween: 0.5
   useClipAgePriority: 0
   limitPolyphony: 0
   voiceLimitCount: 1
@@ -1448,11 +1465,11 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
-    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
-    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
-    m_FadeDuration: .100000001
+    m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -1492,7 +1509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .360294104, g: .708823621, b: 1, a: 0}
+  m_Color: {r: 0.3602941, g: 0.7088236, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1530,7 +1547,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 20, y: -19.25}
   m_SizeDelta: {x: 50, y: 30}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &988910033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1569,7 +1586,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0, g: .860000014, b: 1, a: .275000006}
+        second: {r: 0, g: 0.86, b: 1, a: 0.275}
 --- !u!1 &1003115022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,7 +1633,7 @@ MonoBehaviour:
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
-  m_RepeatDelay: .5
+  m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
 --- !u!114 &1003115025
 MonoBehaviour:
@@ -1643,7 +1660,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 11
 --- !u!1 &1013710475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,11 +1693,11 @@ RectTransform:
   - {fileID: 892795378}
   m_Father: {fileID: 2092619678}
   m_RootOrder: 3
-  m_AnchorMin: {x: 0, y: .5}
-  m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: 0, y: -50.5999985}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -50.6}
   m_SizeDelta: {x: 0, y: 30}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1013710477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1701,11 +1718,11 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
-    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
-    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
-    m_FadeDuration: .100000001
+    m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -1745,7 +1762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .360294104, g: .708823621, b: 1, a: .583999991}
+  m_Color: {r: 0.3602941, g: 0.7088236, b: 1, a: 0.584}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1807,7 +1824,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
 --- !u!1 &1182073889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,6 +1949,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1942,6 +1960,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1952,6 +1971,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1962,6 +1982,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1191858234
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,11 +2033,11 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
-    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
-    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
-    m_FadeDuration: .100000001
+    m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -2056,7 +2077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .360294104, g: .708823621, b: 1, a: .583999991}
+  m_Color: {r: 0.3602941, g: 0.7088236, b: 1, a: 0.584}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2090,11 +2111,11 @@ RectTransform:
   - {fileID: 641277009}
   m_Father: {fileID: 2092619678}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0, y: .5}
-  m_AnchorMax: {x: 1, y: .5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -15}
   m_SizeDelta: {x: 0, y: 30}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1205267884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,7 +2170,7 @@ MonoBehaviour:
   chainLoopMode: 0
   chainLoopNumLoops: 0
   useDialogFadeOut: 0
-  dialogFadeOutTime: .5
+  dialogFadeOutTime: 0.5
   curVariationSequence: 0
   useInactivePeriodPoolRefill: 0
   inactivePeriodSeconds: 5
@@ -2164,7 +2185,7 @@ MonoBehaviour:
   childSoundGroups: []
   limitMode: 0
   limitPerXFrames: 1
-  minimumTimeBetween: .5
+  minimumTimeBetween: 0.5
   useClipAgePriority: 0
   limitPolyphony: 0
   voiceLimitCount: 1
@@ -2206,9 +2227,9 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: .625, y: -19}
+  m_AnchoredPosition: {x: 0.625, y: -19}
   m_SizeDelta: {x: 0, y: 30}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1279592646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2221,7 +2242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .360294104, g: .708823621, b: 1, a: .583999991}
+  m_Color: {r: 0.3602941, g: 0.7088236, b: 1, a: 0.584}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2270,7 +2291,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
 --- !u!114 &1303108118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2283,16 +2304,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stressLevelColors:
-  - {r: .129411772, g: .709803939, b: 1, a: 1}
-  - {r: 1, g: .682758629, b: 0, a: 1}
-  - {r: 0, g: .882352948, b: 0, a: 1}
-  - {r: .926470578, g: .0613105558, b: .723605454, a: 1}
-  - {r: .91911763, g: 0, b: 0, a: 1}
-  - {r: .184039816, g: .380220205, b: .544117689, a: 1}
-  - {r: .235294104, g: .235294104, b: .235294104, a: 1}
-  - {r: 0, g: .602941155, b: .453245491, a: 1}
-  - {r: .483164102, g: .235294104, b: 1, a: 1}
-  - {r: .845588207, g: .822261631, b: 0, a: 1}
+  - {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
+  - {r: 1, g: 0.6827586, b: 0, a: 1}
+  - {r: 0, g: 0.88235295, b: 0, a: 1}
+  - {r: 0.9264706, g: 0.061310556, b: 0.72360545, a: 1}
+  - {r: 0.9191176, g: 0, b: 0, a: 1}
+  - {r: 0.18403982, g: 0.3802202, b: 0.5441177, a: 1}
+  - {r: 0.2352941, g: 0.2352941, b: 0.2352941, a: 1}
+  - {r: 0, g: 0.60294116, b: 0.4532455, a: 1}
+  - {r: 0.4831641, g: 0.2352941, b: 1, a: 1}
+  - {r: 0.8455882, g: 0.82226163, b: 0, a: 1}
 --- !u!114 &1303108119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2417,6 +2438,18 @@ Prefab:
     - target: {fileID: 11445222, guid: b68980bcf2705468ea9d29c9f6aa11b6, type: 2}
       propertyPath: outputPosY
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11472562, guid: b68980bcf2705468ea9d29c9f6aa11b6, type: 2}
+      propertyPath: skyColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11472562, guid: b68980bcf2705468ea9d29c9f6aa11b6, type: 2}
+      propertyPath: skyColor.r
+      value: 0.12941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 11472562, guid: b68980bcf2705468ea9d29c9f6aa11b6, type: 2}
+      propertyPath: skyColor.g
+      value: 0.70980394
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b68980bcf2705468ea9d29c9f6aa11b6, type: 2}
@@ -2545,6 +2578,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2555,6 +2589,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2565,6 +2600,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2575,6 +2611,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1572277322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2699,6 +2736,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2709,6 +2747,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2719,6 +2758,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2729,6 +2769,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1668243808
 Prefab:
   m_ObjectHideFlags: 0
@@ -2825,11 +2866,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1730697574}
   m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: 0}
-  m_AnchorMax: {x: .5, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1668884200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2842,7 +2883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .360294104, g: .708823621, b: 1, a: 1}
+  m_Color: {r: 0.3602941, g: 0.7088236, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2854,9 +2895,10 @@ MonoBehaviour:
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 1
+    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
@@ -2951,6 +2993,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!224 &1730697574
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2964,7 +3007,7 @@ RectTransform:
   - {fileID: 1668884199}
   - {fileID: 988910032}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -3000,11 +3043,11 @@ RectTransform:
   - {fileID: 452361366}
   m_Father: {fileID: 2092619678}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: .5}
-  m_AnchorMax: {x: 1, y: .5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 32}
   m_SizeDelta: {x: 0, y: 40}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2028745916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3017,7 +3060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .360294104, g: .708823621, b: 1, a: .583999991}
+  m_Color: {r: 0.3602941, g: 0.7088236, b: 1, a: 0.584}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3071,7 +3114,7 @@ RectTransform:
   - {fileID: 1191858239}
   - {fileID: 1013710476}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 12
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -3131,6 +3174,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &2119241968
 GameObject:
   m_ObjectHideFlags: 0
@@ -3156,12 +3200,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2119241968}
-  m_LocalRotation: {x: .353857905, y: 0, z: 0, w: .935299218}
+  m_LocalRotation: {x: 0.3538579, y: 0, z: 0, w: 0.9352992}
   m_LocalPosition: {x: -364, y: 371, z: -264}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
 --- !u!20 &2119241970
 Camera:
   m_ObjectHideFlags: 0
@@ -3178,7 +3222,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
+  near clip plane: 0.3
   far clip plane: 7000
   field of view: 70
   orthographic: 0
@@ -3194,7 +3238,7 @@ Camera:
   m_HDR: 0
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
-  m_StereoSeparation: .0219999999
+  m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
 --- !u!81 &2119241971
 AudioListener:
@@ -3259,7 +3303,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2139902841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3287,6 +3331,7 @@ MonoBehaviour:
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
+    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
