@@ -70,9 +70,10 @@ public class Enemy : MonoBehaviour
 		{
       TrackTile parentTrackTile = this.cachedTransform.GetComponentInParent<TrackTile>();
 
+			// Only replace the prefab if an explode prefab is provided, otherwise stay, e.g. boxes, energy barriers
 			if ( this.explodePrefab )
 			{
-	      Transform explodedEnemy = this.pool.Spawn( explodePrefab.transform, this.cachedTransform.position, Quaternion.identity, parentTrackTile.transform );
+				Transform explodedEnemy = this.pool.Spawn( explodePrefab.transform, this.cachedTransform.position, Quaternion.identity, parentTrackTile.transform );
 
 				// Catch all debris elements with and Overlapsphere and maybe even other debris not part of the enemy object
 				Collider[] colliders = Physics.OverlapSphere( explodedEnemy.transform.position, 20.0f );
@@ -90,12 +91,11 @@ public class Enemy : MonoBehaviour
 
 				this.exploded = true;
 
+				// Move enemy object down below the track, so it is out of sight
+				// but leave despawn logic to the parent tracktile to not mess with
+				// track despawn workflow
+				this.transform.position += Vector3.down * 2000;
 			}
-
-			// Move enemy object down below the track, so it is out of sight
-			// but leave despawn logic to the parent tracktile to not mess with
-			// track despawn workflow
-			this.transform.position += Vector3.down * 2000;
 		}
 	}
 
