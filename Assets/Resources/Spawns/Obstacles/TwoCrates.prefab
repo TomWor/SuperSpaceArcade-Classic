@@ -74,7 +74,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106144}
-  m_LocalRotation: {x: 0, y: .214019671, z: 0, w: .97682941}
+  m_LocalRotation: {x: 0, y: 0.21401967, z: 0, w: 0.9768294}
   m_LocalPosition: {x: 0, y: 12.5, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -86,7 +86,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106146}
-  m_LocalRotation: {x: 0, y: -.260934085, z: 0, w: .965356708}
+  m_LocalRotation: {x: 0, y: -0.26093408, z: 0, w: 0.9653567}
   m_LocalPosition: {x: 22.5, y: 12.5, z: 22.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -110,8 +110,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -134,8 +136,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -161,7 +165,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106144}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 25, y: 25, z: 25}
@@ -173,7 +177,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106146}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 25, y: 25, z: 25}
@@ -205,7 +209,7 @@ MonoBehaviour:
   explodePrefab: {fileID: 188376, guid: 6e6ad75a63c814c1eac12c0d18170202, type: 2}
   health: 1
   hitColor: {r: 1, g: 0, b: 0, a: 0}
-  explosionForce: 15
+  explosionForce: 2
   points: 8
   exploded: 0
 --- !u!114 &11470086
@@ -222,7 +226,7 @@ MonoBehaviour:
   explodePrefab: {fileID: 188376, guid: 6e6ad75a63c814c1eac12c0d18170202, type: 2}
   health: 1
   hitColor: {r: 1, g: 0, b: 0, a: 0}
-  explosionForce: 15
+  explosionForce: 2
   points: 8
   exploded: 0
 --- !u!1001 &100100000
@@ -244,6 +248,14 @@ Prefab:
       propertyPath: explodePrefab
       value: 
       objectReference: {fileID: 188376, guid: 6e6ad75a63c814c1eac12c0d18170202, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: explosionForce
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 106142}
