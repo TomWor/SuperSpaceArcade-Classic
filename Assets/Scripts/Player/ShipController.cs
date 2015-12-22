@@ -44,10 +44,21 @@ public class ShipController : MonoBehaviour
         this.shieldMesh = transform.Find("Shield");
         this.currentSpeed = this.startSpeed;
         this.targetSpeed = this.defaultSpeed;
+    }
 
+
+	public void OnEnable()
+	{
         UIController.onShoot += this.Shoot;
         UIController.onJump += this.Jump;
-    }
+	}
+
+
+	public void OnDisable()
+	{
+        UIController.onShoot -= this.Shoot;
+        UIController.onJump -= this.Jump;
+	}
 
 
     void Start()
@@ -68,18 +79,7 @@ public class ShipController : MonoBehaviour
 
             if (this.controller.isGrounded)
             {
-                this.superGround = false;
-                this.moveDirection = new Vector3(0, 0, 0);
-
-                if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire2"))
-                    this.Jump();
-
-            }
-            else
-            {
-
-                if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire2"))
-                    this.superGround = true;
+				this.moveDirection = new Vector3(0, 0, 0);
             }
 
             this.moveDirection.z = this.currentSpeed;
@@ -93,28 +93,18 @@ public class ShipController : MonoBehaviour
                 this.moveDirection.y -= this.gravity * Time.deltaTime; //+ (Input.GetAxis("Vertical") * 2.5f);
             }
 
+			// Get horizontal axis steering
 #if UNITY_EDITOR
-
-            this.moveDirection.x = Input.GetAxis("Horizontal") * this.horizontalSpeed;
-
+		this.moveDirection.x = Input.GetAxis("Horizontal") * this.horizontalSpeed;
 #elif UNITY_ANDROID
-
         this.moveDirection.x = Input.acceleration.x * this.horizontalSpeed * this.horizontalSpeedMobileMultiplier;
-
 #elif UNITY_IOS
-
         this.moveDirection.x = Input.acceleration.x * this.horizontalSpeed * this.horizontalSpeedMobileMultiplier;
-
 #endif
 
             this.moveDirection = transform.TransformDirection(moveDirection);
             this.controller.Move(moveDirection * Time.deltaTime);
 
-
-            if (Input.GetButtonDown("Fire1") || Input.GetKeyDown("s"))
-            {
-                this.Shoot();
-            }
 
             if (Input.GetButtonDown("Fire3"))
             {
@@ -128,17 +118,11 @@ public class ShipController : MonoBehaviour
                 {
 
 #if UNITY_EDITOR
-
-                    this.shipRotation = Input.GetAxis("Horizontal") * 50 * Time.deltaTime * -1 * 2.0f;
-
+				this.shipRotation = Input.GetAxis("Horizontal") * 50 * Time.deltaTime * -1 * 2.0f;
 #elif UNITY_ANDROID
-
-                this.shipRotation = Input.acceleration.x * 50 * Time.deltaTime * -1 * 2.0f * this.horizontalSpeedMobileMultiplier;
-
+				this.shipRotation = Input.acceleration.x * 50 * Time.deltaTime * -1 * 2.0f * this.horizontalSpeedMobileMultiplier;
 #elif UNITY_IOS
-
-                this.shipRotation = Input.acceleration.x * 50 * Time.deltaTime * -1 * 2.0f * this.horizontalSpeedMobileMultiplier;
-
+				this.shipRotation = Input.acceleration.x * 50 * Time.deltaTime * -1 * 2.0f * this.horizontalSpeedMobileMultiplier;
 #endif
 
                     this.shipMesh.Rotate(Vector3.forward * this.shipRotation);
@@ -174,6 +158,9 @@ public class ShipController : MonoBehaviour
 
     public void Jump()
     {
+		// Set superground when jump action is triggered mid-air
+		this.superGround = !this.controller.isGrounded;
+
         this.GetComponent<AudioSource>().PlayOneShot(this.jumpSound, 1.5f);
         this.moveDirection.y = this.jumpSpeed;
 
