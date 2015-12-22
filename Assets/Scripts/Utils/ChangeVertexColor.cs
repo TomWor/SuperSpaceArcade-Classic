@@ -8,6 +8,7 @@ public class ChangeVertexColor : MonoBehaviour
 
     private MeshFilter cachedMeshFilter;
     private Color[] meshColors;
+	private float speed = 1.0f;
 
 
     void Awake()
@@ -37,7 +38,13 @@ public class ChangeVertexColor : MonoBehaviour
             if (item.targetColor != item.currentColor)
             {
                 this.meshColors = this.cachedMeshFilter.mesh.colors;
-                item.currentColor = Color.Lerp(item.currentColor, item.targetColor, Time.deltaTime);
+
+				if (this.speed == 0.0)
+				{
+					item.currentColor = item.targetColor;
+				} else {
+					item.currentColor = Color.Lerp(item.currentColor, item.targetColor, Time.deltaTime * this.speed);
+				}
 
                 for (var i = 0; i < item.targetVertices.Count; i++)
                 {
@@ -50,8 +57,10 @@ public class ChangeVertexColor : MonoBehaviour
     }
 
 
-    public void ChangeColor(string itemName, Color color)
+    public void ChangeColor(string itemName, Color color, float speed = 1.0f)
     {
+		this.speed = speed;
+
         foreach (VertexColorItem item in this.colorItems)
         {
             if (item.name == itemName)

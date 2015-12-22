@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3332904}
   - 23: {fileID: 2390476}
   - 114: {fileID: 11412310}
+  - 114: {fileID: 11473626}
   m_Layer: 12
   m_Name: Skrull
   m_TagString: Enemy
@@ -80,6 +81,7 @@ GameObject:
   - 33: {fileID: 3340568}
   - 23: {fileID: 2383834}
   - 114: {fileID: 11469672}
+  - 114: {fileID: 11443452}
   m_Layer: 12
   m_Name: Skrull
   m_TagString: Enemy
@@ -115,6 +117,7 @@ GameObject:
   - 33: {fileID: 3356592}
   - 23: {fileID: 2303928}
   - 114: {fileID: 11432330}
+  - 114: {fileID: 11493724}
   m_Layer: 12
   m_Name: Skrull
   m_TagString: Enemy
@@ -128,7 +131,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 113290}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
   m_LocalPosition: {x: -20, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -180,7 +183,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120586}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
   m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -193,7 +196,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143560}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
   m_LocalPosition: {x: 20, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -230,8 +233,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -254,8 +259,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -278,8 +285,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -376,6 +385,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a636e2a5ded5c4aca8fff93119df3f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11443452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1928dca87131b4e9dae1db9757ce94eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorItems:
+  - name: EnemyColor
+    originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
+    targetColor: {r: 0, g: 0, b: 0, a: 0}
+    currentColor: {r: 0, g: 0, b: 0, a: 0}
+    targetVertices: 
 --- !u!114 &11447084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -390,6 +416,7 @@ MonoBehaviour:
   explodePrefab: {fileID: 125890, guid: 7d07d38a1a66249959d269150d8370b8, type: 2}
   health: 2
   hitColor: {r: 1, g: 0, b: 0, a: 1}
+  originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
   explosionForce: 50
   points: 16
   exploded: 0
@@ -407,6 +434,7 @@ MonoBehaviour:
   explodePrefab: {fileID: 125890, guid: 7d07d38a1a66249959d269150d8370b8, type: 2}
   health: 2
   hitColor: {r: 1, g: 0, b: 0, a: 1}
+  originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
   explosionForce: 50
   points: 16
   exploded: 0
@@ -421,6 +449,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a636e2a5ded5c4aca8fff93119df3f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11473626
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1928dca87131b4e9dae1db9757ce94eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorItems:
+  - name: EnemyColor
+    originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
+    targetColor: {r: 0, g: 0, b: 0, a: 0}
+    currentColor: {r: 0, g: 0, b: 0, a: 0}
+    targetVertices: 
 --- !u!114 &11489216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -434,6 +479,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 36
   range: 20
+--- !u!114 &11493724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1928dca87131b4e9dae1db9757ce94eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorItems:
+  - name: EnemyColor
+    originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
+    targetColor: {r: 0, g: 0, b: 0, a: 0}
+    currentColor: {r: 0, g: 0, b: 0, a: 0}
+    targetVertices: 
 --- !u!114 &11495674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -448,6 +510,7 @@ MonoBehaviour:
   explodePrefab: {fileID: 125890, guid: 7d07d38a1a66249959d269150d8370b8, type: 2}
   health: 2
   hitColor: {r: 1, g: 0, b: 0, a: 1}
+  originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
   explosionForce: 50
   points: 16
   exploded: 0
@@ -473,6 +536,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: range
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: originalColor.r
+      value: 0.12941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: originalColor.g
+      value: 0.70980394
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: originalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: originalColor.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

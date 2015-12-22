@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
 	private int _health = 0;
 
 	public Color hitColor;
-	private Color originalColor;
+	public Color originalColor;
 
 	public float explosionForce = 15.0f;
 	public int points = 8;
@@ -27,6 +27,9 @@ public class Enemy : MonoBehaviour
 	// Having another item spawned can confuse it
 	protected bool isSpawned = false;
 
+    // vertex color components of the mesh items
+    private ChangeVertexColor[] vertexColorComponents;
+
 
 	public void Awake()
 	{
@@ -35,6 +38,8 @@ public class Enemy : MonoBehaviour
 
 		this.originalPosition = this.cachedTransform.localPosition;
 		this.ResetDefaultValues();
+
+        this.vertexColorComponents = this.GetComponentsInChildren<ChangeVertexColor>();
 	}
 
 
@@ -46,6 +51,11 @@ public class Enemy : MonoBehaviour
 		}
 
 		this.isSpawned = true;
+
+		foreach (ChangeVertexColor vertexColorComponent in this.vertexColorComponents)
+		{
+			vertexColorComponent.ChangeColor("EnemyColor", this.originalColor, 0.0f);
+		}
 	}
 
 
@@ -110,7 +120,10 @@ public class Enemy : MonoBehaviour
 		}
 		else
 		{
-			// TODO: Color the enemy different
+			foreach (ChangeVertexColor vertexColorComponent in this.vertexColorComponents)
+			{
+				vertexColorComponent.ChangeColor("EnemyColor", this.hitColor, 0.0f);
+			}
 		}
 	}
 
