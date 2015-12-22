@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2379522}
   - 64: {fileID: 6491502}
   - 114: {fileID: 11443014}
+  - 114: {fileID: 11428976}
   m_Layer: 10
   m_Name: Platform
   m_TagString: Untagged
@@ -35,6 +36,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &190430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 457602}
+  - 114: {fileID: 11423042}
+  m_Layer: 10
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &457602
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190430}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 35, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 498550}
+  m_RootOrder: 1
 --- !u!4 &494368
 Transform:
   m_ObjectHideFlags: 1
@@ -42,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 118018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40, y: 10.0500002, z: 0}
+  m_LocalPosition: {x: 40, y: 10.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 498550}
@@ -58,6 +87,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 494368}
+  - {fileID: 457602}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &2379522
@@ -78,8 +108,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -103,6 +135,32 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 0be8d93442bc3479e9a9e2dfdb8b3be9, type: 3}
+--- !u!114 &11423042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0811971797ac4430bb66b021450edb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPowerUps: 1
+  spawnEnemies: 1
+  spawnObstacles: 0
+  spawnDecals: 1
+--- !u!114 &11428976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a946403db3848a88e0f5affcb72868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11443014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorItems:
   - name: TrackBorder
-    originalColor: {r: .129411772, g: .709803939, b: 1, a: 1}
+    originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
     targetColor: {r: 0, g: 0, b: 0, a: 0}
     currentColor: {r: 0, g: 0, b: 0, a: 0}
     targetVertices: 

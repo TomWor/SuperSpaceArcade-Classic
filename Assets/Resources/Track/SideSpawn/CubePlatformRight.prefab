@@ -28,6 +28,7 @@ GameObject:
   - 23: {fileID: 2317060}
   - 114: {fileID: 11425384}
   - 65: {fileID: 6559868}
+  - 114: {fileID: 11404208}
   m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
@@ -107,8 +108,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -132,6 +135,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100, y: 60, z: 100}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11404208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a946403db3848a88e0f5affcb72868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11405038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPowerUps: 1
   spawnEnemies: 1
-  spawnObstacles: 1
+  spawnObstacles: 0
   spawnDecals: 1
 --- !u!114 &11425384
 MonoBehaviour:
@@ -160,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorItems:
   - name: TrackBorder
-    originalColor: {r: .129411772, g: .709803939, b: 1, a: 1}
+    originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
     targetColor: {r: 0, g: 0, b: 0, a: 0}
     currentColor: {r: 0, g: 0, b: 0, a: 0}
     targetVertices: 
@@ -191,6 +205,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: colorItems.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawnObstacles
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &116704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 432464}
+  - 114: {fileID: 11499980}
+  m_Layer: 10
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &143018
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,6 +44,7 @@ GameObject:
   - 23: {fileID: 2365504}
   - 64: {fileID: 6460970}
   - 114: {fileID: 11411926}
+  - 114: {fileID: 11466350}
   m_Layer: 10
   m_Name: PlatformAndBack
   m_TagString: Untagged
@@ -35,6 +52,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &432464
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -60, y: 0, z: 85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 454794}
+  m_RootOrder: 1
 --- !u!4 &454794
 Transform:
   m_ObjectHideFlags: 1
@@ -46,6 +75,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 473882}
+  - {fileID: 432464}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &473882
@@ -54,8 +84,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190430}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: -50, y: -9.94999981, z: 85}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: -50, y: -9.95, z: 85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 454794}
@@ -78,8 +108,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -116,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorItems:
   - name: TrackBorder
-    originalColor: {r: .129411772, g: .709803939, b: 1, a: 1}
+    originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
     targetColor: {r: 0, g: 0, b: 0, a: 0}
     currentColor: {r: 0, g: 0, b: 0, a: 0}
     targetVertices: 
@@ -137,6 +169,32 @@ MonoBehaviour:
   likelyhood: 5
   spawnType: 0
   poolName: Track
+--- !u!114 &11466350
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a946403db3848a88e0f5affcb72868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11499980
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0811971797ac4430bb66b021450edb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPowerUps: 1
+  spawnEnemies: 1
+  spawnObstacles: 1
+  spawnDecals: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

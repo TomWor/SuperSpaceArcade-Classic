@@ -6,13 +6,12 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: EnergyBarrier
-  m_Shader: {fileID: 10721, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
+  m_Name: BarrierBorder
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
   m_LightmapFlags: 5
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -20,8 +19,8 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 87db1e10039fe4b0a82e975b5ebfe2fd, type: 3}
-          m_Scale: {x: 2, y: 0.6}
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -79,34 +78,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _SpecGlossMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Normals
-        second:
-          m_Texture: {fileID: 2800000, guid: bbab0a6f7bae9cf42bf057d8ee2755f6, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Diffuse
-        second:
-          m_Texture: {fileID: 2800000, guid: b66bceaf0cc0ace4e9bdc92f14bba709, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _node_8144
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -115,15 +86,11 @@ Material:
       data:
         first:
           name: _DstBlend
-        second: 10
+        second: 0
       data:
         first:
           name: _Cutoff
         second: 0.5
-      data:
-        first:
-          name: _Shininess
-        second: 0.7
       data:
         first:
           name: _Parallax
@@ -131,11 +98,11 @@ Material:
       data:
         first:
           name: _ZWrite
-        second: 0
+        second: 1
       data:
         first:
           name: _Glossiness
-        second: 0.218
+        second: 0.5
       data:
         first:
           name: _BumpScale
@@ -155,27 +122,11 @@ Material:
       data:
         first:
           name: _Mode
-        second: 3
+        second: 0
       data:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _InvFade
-        second: 1
-      data:
-        first:
-          name: _BulgeScale
-        second: 0.2
-      data:
-        first:
-          name: _BulgeShape
-        second: 5
-      data:
-        first:
-          name: _GlowIntensity
-        second: 1.2
     m_Colors:
       data:
         first:
@@ -184,24 +135,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 0.6827586, b: 0, a: 1}
-      data:
-        first:
-          name: _SpecColor
-        second: {r: 1, g: 0.88965523, b: 0, a: 1}
-      data:
-        first:
-          name: _Emission
-        second: {r: 1, g: 0.59999996, b: 0, a: 1}
-      data:
-        first:
-          name: _TintColor
-        second: {r: 1, g: 0.8482759, b: 0, a: 0.5}
-      data:
-        first:
-          name: _GlowColor
-        second: {r: 1, g: 0.2391481, b: 0.1102941, a: 1}
-      data:
-        first:
-          name: _EmisColor
-        second: {r: 0.2, g: 0.2, b: 0.2, a: 0}
+        second: {r: 1, g: 1, b: 1, a: 1}

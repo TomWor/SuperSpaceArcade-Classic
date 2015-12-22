@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2324324}
   - 114: {fileID: 11480780}
   - 64: {fileID: 6420280}
+  - 114: {fileID: 11418804}
   m_Layer: 10
   m_Name: Mesh
   m_TagString: Untagged
@@ -51,14 +52,30 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &188744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 498040}
+  - 114: {fileID: 11441834}
+  m_Layer: 10
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &418892
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169916}
-  m_LocalRotation: {x: -3.52624951e-08, y: -.976296008, z: .216439635, w: -1.59058814e-07}
-  m_LocalPosition: {x: 60, y: 5.5, z: 94.6999969}
+  m_LocalRotation: {x: -0.000000035262495, y: -0.976296, z: 0.21643963, w: -0.00000015905881}
+  m_LocalPosition: {x: 60, y: 5.5, z: 94.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 461488}
@@ -75,6 +92,7 @@ Transform:
   m_Children:
   - {fileID: 476558}
   - {fileID: 418892}
+  - {fileID: 498040}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &476558
@@ -83,12 +101,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112616}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: 50, y: .0500000007, z: 90}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: 50, y: 0.05, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 461488}
   m_RootOrder: 0
+--- !u!4 &498040
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 60, y: 20, z: 160}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 461488}
+  m_RootOrder: 2
 --- !u!23 &2324324
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -107,8 +137,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -161,6 +193,32 @@ MonoBehaviour:
   likelyhood: 5
   spawnType: 1
   poolName: Track
+--- !u!114 &11418804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a946403db3848a88e0f5affcb72868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11441834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0811971797ac4430bb66b021450edb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPowerUps: 1
+  spawnEnemies: 1
+  spawnObstacles: 0
+  spawnDecals: 1
 --- !u!114 &11480780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -174,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorItems:
   - name: TrackBorder
-    originalColor: {r: .129411772, g: .709803939, b: 1, a: 1}
+    originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
     targetColor: {r: 0, g: 0, b: 0, a: 0}
     currentColor: {r: 0, g: 0, b: 0, a: 0}
     targetVertices: 

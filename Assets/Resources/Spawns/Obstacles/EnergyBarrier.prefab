@@ -16,6 +16,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &136038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 498072}
+  - 33: {fileID: 3300524}
+  - 23: {fileID: 2374992}
+  - 114: {fileID: 11442420}
+  - 114: {fileID: 11401742}
+  m_Layer: 10
+  m_Name: BarrierBorder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &174778
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,8 +45,8 @@ GameObject:
   - 4: {fileID: 451792}
   - 33: {fileID: 3316116}
   - 23: {fileID: 2347794}
-  - 114: {fileID: 11483846}
-  - 65: {fileID: 6581126}
+  - 114: {fileID: 11489582}
+  - 65: {fileID: 6522396}
   m_Layer: 12
   m_Name: Plane
   m_TagString: Untagged
@@ -46,6 +65,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 451792}
+  - {fileID: 498072}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &451792
@@ -54,12 +74,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174778}
-  m_LocalRotation: {x: 0.7071066, y: 0, z: 0, w: -0.70710695}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 3}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 20, z: -50}
+  m_LocalScale: {x: 10, y: 12, z: 4}
   m_Children: []
   m_Father: {fileID: 444160}
   m_RootOrder: 0
+--- !u!4 &498072
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 20, z: -50}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 444160}
+  m_RootOrder: 1
 --- !u!23 &2347794
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -86,6 +118,39 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &2374992
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136038}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 27f89cbe35f5547a6974610b667f1733, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &3300524
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136038}
+  m_Mesh: {fileID: 4300000, guid: c4fde4b9595a7415384145b560847793, type: 3}
 --- !u!33 &3316116
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -93,7 +158,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174778}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6581126
+--- !u!65 &6522396
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -103,8 +168,36 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 2.2204457e-16, z: 9.999999}
+  m_Size: {x: 12, y: 2, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11401742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a946403db3848a88e0f5affcb72868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11442420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1928dca87131b4e9dae1db9757ce94eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorItems:
+  - name: TrackBorder
+    originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
+    targetColor: {r: 0, g: 0, b: 0, a: 0}
+    currentColor: {r: 0, g: 0, b: 0, a: 0}
+    targetVertices: 
 --- !u!114 &11451900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,8 +210,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   likelyhood: 5
-  spawnType: 2
---- !u!114 &11483846
+  spawnType: 3
+--- !u!114 &11489582
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -126,15 +219,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 174778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a678682b76694cf8ab47662535d2285, type: 3}
+  m_Script: {fileID: 11500000, guid: b94494362c1a0460bab46c803b252d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   explodePrefab: {fileID: 0}
-  health: 3
+  health: 1
   hitColor: {r: 0, g: 0, b: 0, a: 0}
   explosionForce: 15
   points: 8
   exploded: 0
+  materialIndex: 0
+  uvAnimationRate: {x: 1, y: 0}
+  textureName: _MainTex
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -143,8 +239,12 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: colorItems.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_Layer
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TagString
@@ -156,11 +256,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spawnType
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: colorItems.Array.data[0].originalColor.r
+      value: 0.12941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: colorItems.Array.data[0].originalColor.g
+      value: 0.70980394
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: colorItems.Array.data[0].originalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: colorItems.Array.data[0].originalColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: colorItems.Array.data[0].name
+      value: TrackBorder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
