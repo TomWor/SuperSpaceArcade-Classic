@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2362452}
   - 114: {fileID: 11459620}
   - 65: {fileID: 6595502}
+  - 114: {fileID: 11462524}
   m_Layer: 10
   m_Name: DefaultStart
   m_TagString: Untagged
@@ -31,6 +32,7 @@ GameObject:
   - 23: {fileID: 2334770}
   - 114: {fileID: 11491232}
   - 65: {fileID: 6508292}
+  - 114: {fileID: 11438866}
   m_Layer: 10
   m_Name: DefaultEnd (1)
   m_TagString: Untagged
@@ -50,6 +52,7 @@ GameObject:
   - 23: {fileID: 2352764}
   - 114: {fileID: 11444010}
   - 65: {fileID: 6572388}
+  - 114: {fileID: 11440138}
   m_Layer: 10
   m_Name: DefaultEnd
   m_TagString: Untagged
@@ -101,6 +104,7 @@ GameObject:
   - 23: {fileID: 2379534}
   - 114: {fileID: 11409626}
   - 65: {fileID: 6507894}
+  - 114: {fileID: 11480850}
   m_Layer: 10
   m_Name: DefaultEnd
   m_TagString: Untagged
@@ -140,7 +144,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190726}
-  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071067}
   m_LocalPosition: {x: 50, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -152,7 +156,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103392}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
   m_LocalPosition: {x: 0, y: -10, z: 550}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -164,7 +168,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116522}
-  m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
   m_LocalPosition: {x: -50, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -203,8 +207,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -227,8 +233,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -251,8 +259,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -275,8 +285,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -370,10 +382,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorItems:
   - name: TrackBorder
-    originalColor: {r: .129411772, g: .709803939, b: 1, a: 1}
+    originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
     targetColor: {r: 0, g: 0, b: 0, a: 0}
     currentColor: {r: 0, g: 0, b: 0, a: 0}
     targetVertices: 
+--- !u!114 &11438866
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a946403db3848a88e0f5affcb72868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11440138
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a946403db3848a88e0f5affcb72868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11444010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -387,7 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorItems:
   - name: TrackBorder
-    originalColor: {r: .129411772, g: .709803939, b: 1, a: 1}
+    originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
     targetColor: {r: 0, g: 0, b: 0, a: 0}
     currentColor: {r: 0, g: 0, b: 0, a: 0}
     targetVertices: 
@@ -404,10 +438,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorItems:
   - name: TrackBorder
-    originalColor: {r: .129411772, g: .709803939, b: 1, a: 1}
+    originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
     targetColor: {r: 0, g: 0, b: 0, a: 0}
     currentColor: {r: 0, g: 0, b: 0, a: 0}
     targetVertices: 
+--- !u!114 &11462524
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a946403db3848a88e0f5affcb72868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11471256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -417,6 +462,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6898a4cb889446128af385d13ca7a22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11480850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a946403db3848a88e0f5affcb72868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11484088
@@ -452,7 +508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorItems:
   - name: TrackBorder
-    originalColor: {r: .129411772, g: .709803939, b: 1, a: 1}
+    originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
     targetColor: {r: 0, g: 0, b: 0, a: 0}
     currentColor: {r: 0, g: 0, b: 0, a: 0}
     targetVertices: 

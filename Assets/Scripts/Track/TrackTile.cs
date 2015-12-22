@@ -55,35 +55,10 @@ public class TrackTile : MonoBehaviour
     // Cached transform
     private Transform cachedTransform;
 
-    // vertex color components of the mesh items
-    private ChangeVertexColor[] vertexColorComponents;
-
-
-    public void OnEnable()
-    {
-        EventManager.onTrackBorderColorChanged += this.OnTrackBorderColorChanged;
-    }
-
-
-    public void OnDisable()
-    {
-        EventManager.onTrackBorderColorChanged -= this.OnTrackBorderColorChanged;
-    }
-
 
     public void Awake()
     {
         this.cachedTransform = this.transform;
-        this.vertexColorComponents = this.GetComponentsInChildren<ChangeVertexColor>();
-    }
-
-
-    public void OnTrackBorderColorChanged(Color color)
-    {
-        foreach (ChangeVertexColor vertexColorComponent in this.vertexColorComponents)
-        {
-            vertexColorComponent.ChangeColor("TrackBorder", color);
-        }
     }
 
 
@@ -105,11 +80,6 @@ public class TrackTile : MonoBehaviour
         {
             //Debug.Log ("Spawnpoint position: " + spawnPoint.transform.position.ToString ());
             spawnPoint.Spawn();
-        }
-
-        foreach (ChangeVertexColor vertexColorComponent in this.vertexColorComponents)
-        {
-            this.OnTrackBorderColorChanged(GameController.currentTrackBorderColor);
         }
     }
 

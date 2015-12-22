@@ -30,21 +30,7 @@ public class ChangeVertexColor : MonoBehaviour
     }
 
 
-    void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            foreach (VertexColorItem item in this.colorItems)
-            {
-                item.targetColor = new Color(Random.value, Random.value, Random.value);
-            }
-        }
-
-    }
-
-
-    void FixedUpdate()
+    void LateUpdate()
     {
         foreach (VertexColorItem item in this.colorItems)
         {
