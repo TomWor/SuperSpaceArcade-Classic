@@ -161,8 +161,11 @@ public class ShipController : MonoBehaviour
 		// Set superground when jump action is triggered mid-air
 		this.superGround = !this.controller.isGrounded;
 
-        this.GetComponent<AudioSource>().PlayOneShot(this.jumpSound, 1.5f);
-        this.moveDirection.y = this.jumpSpeed;
+		if (this.controller.isGrounded)
+		{
+			this.GetComponent<AudioSource>().PlayOneShot(this.jumpSound, 1.5f);
+			this.moveDirection.y = this.jumpSpeed;
+		}
 
         this.moveDirection = transform.TransformDirection(this.moveDirection);
         this.controller.Move(this.moveDirection * Time.deltaTime);
