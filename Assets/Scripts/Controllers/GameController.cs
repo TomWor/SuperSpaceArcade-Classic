@@ -30,6 +30,7 @@ public class GameController : SceneController
 
     public void Start()
     {
+		Application.targetFrameRate = 60;
         GameController.currentStressLevel = 0;
 
         SRDebug.Instance.PanelVisibilityChanged += visible =>
