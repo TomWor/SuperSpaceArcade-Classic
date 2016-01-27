@@ -5,9 +5,11 @@ public class UIController : MonoBehaviour
 {
 
 	public delegate void OnShootHandler ();
+
 	public static event OnShootHandler onShoot;
 
 	public delegate void OnJumpHandler ();
+
 	public static event OnJumpHandler onJump;
 
 
@@ -20,14 +22,12 @@ public class UIController : MonoBehaviour
 	public void Update ()
 	{
 #if UNITY_EDITOR
-		if (Input.GetButtonDown("Fire1") || Input.GetKeyDown("s"))
-		{
-			this.Shoot();
+		if (Input.GetButtonDown ("Fire1") || Input.GetKeyDown ("s")) {
+			this.Shoot ();
 		}
 
-		if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire2"))
-		{
-			this.Jump();
+		if (Input.GetButtonDown ("Jump") || Input.GetButtonDown ("Fire2")) {
+			this.Jump ();
 		}
 #endif
 	}
@@ -35,14 +35,14 @@ public class UIController : MonoBehaviour
 
 	public void Shoot ()
 	{
-		if ( onShoot != null )
+		if (onShoot != null)
 			onShoot ();
 	}
 
 
 	public void Jump ()
 	{
-		if ( onJump != null )
+		if (onJump != null)
 			onJump ();
 	}
 
