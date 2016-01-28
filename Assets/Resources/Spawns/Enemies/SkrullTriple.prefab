@@ -417,6 +417,7 @@ MonoBehaviour:
   explodePrefab: {fileID: 125890, guid: 7d07d38a1a66249959d269150d8370b8, type: 2}
   health: 2
   hitColor: {r: 1, g: 0, b: 0, a: 1}
+  blinkColor: {r: 0.9044118, g: 0.9044118, b: 0.9044118, a: 1}
   originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
   explosionForce: 50
   points: 16
@@ -435,6 +436,7 @@ MonoBehaviour:
   explodePrefab: {fileID: 125890, guid: 7d07d38a1a66249959d269150d8370b8, type: 2}
   health: 2
   hitColor: {r: 1, g: 0, b: 0, a: 1}
+  blinkColor: {r: 0.9044118, g: 0.9044118, b: 0.9044118, a: 1}
   originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
   explosionForce: 50
   points: 16
@@ -511,6 +513,7 @@ MonoBehaviour:
   explodePrefab: {fileID: 125890, guid: 7d07d38a1a66249959d269150d8370b8, type: 2}
   health: 2
   hitColor: {r: 1, g: 0, b: 0, a: 1}
+  blinkColor: {r: 0.9044118, g: 0.9044118, b: 0.9044118, a: 1}
   originalColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
   explosionForce: 50
   points: 16
@@ -557,6 +560,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: stressLevel
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: blinkColor.r
+      value: 0.9044118
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: blinkColor.g
+      value: 0.9044118
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: blinkColor.b
+      value: 0.9044118
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: blinkColor.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

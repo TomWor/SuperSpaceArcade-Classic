@@ -13,15 +13,13 @@ public class Score : MonoBehaviour
 	public int speed = 30;
 
 	private int _score;
-	public int ScoreValue
-	{
+
+	public int ScoreValue {
 		get { return this._score; }
-		set
-		{
+		set {
 			this._score = value;
 			this.CreateScoreString();
 		}
-
 	}
 
 
@@ -33,22 +31,21 @@ public class Score : MonoBehaviour
 
 	public void OnSpawned()
 	{
-		StartCoroutine( Rise() );
-		PoolManager.Pools[this.poolName].Despawn( this.transform, this.lifespan, PoolManager.Pools[this.poolName].transform );
+		StartCoroutine(Rise());
+		PoolManager.Pools[this.poolName].Despawn(this.transform, this.lifespan, PoolManager.Pools[this.poolName].transform);
 	}
 
 
 	private void CreateScoreString()
 	{
 		string scoreString = this._score.ToString();
-		float characterPositionX = -( ( scoreString.Length * 15 ) / 2 );
+		float characterPositionX = -((scoreString.Length * 15) / 2);
 
-		foreach ( char c in scoreString )
-		{
-			Vector3 characterPosition = new Vector3( this.cachedTransform.position.x + characterPositionX, this.cachedTransform.position.y, this.cachedTransform.position.z );
+		foreach (char c in scoreString) {
+			Vector3 characterPosition = new Vector3(this.cachedTransform.position.x + characterPositionX, this.cachedTransform.position.y, this.cachedTransform.position.z);
 
-			Transform characterTransform = PoolManager.Pools["Alphabet"].Spawn( c.ToString(), characterPosition, Quaternion.identity, this.cachedTransform );
-			this.characterTransforms.Add( characterTransform );
+			Transform characterTransform = PoolManager.Pools["Alphabet"].Spawn(c.ToString(), characterPosition, Quaternion.identity, this.cachedTransform);
+			this.characterTransforms.Add(characterTransform);
 
 			characterPositionX += 15;
 		}
@@ -58,9 +55,8 @@ public class Score : MonoBehaviour
 
 	public void OnDespawned()
 	{
-		foreach ( Transform character in this.characterTransforms )
-		{
-			PoolManager.Pools["Alphabet"].Despawn( character, PoolManager.Pools["Alphabet"].transform );
+		foreach (Transform character in this.characterTransforms) {
+			PoolManager.Pools["Alphabet"].Despawn(character, PoolManager.Pools["Alphabet"].transform);
 		}
 		this.characterTransforms.Clear();
 		StopAllCoroutines();
@@ -69,9 +65,8 @@ public class Score : MonoBehaviour
 
 	private IEnumerator Rise()
 	{
-		while ( true )
-		{
-			this.cachedTransform.position = new Vector3( this.cachedTransform.position.x, this.cachedTransform.position.y + this.speed * Time.deltaTime, this.cachedTransform.position.z );
+		while (true) {
+			this.cachedTransform.position = new Vector3(this.cachedTransform.position.x, this.cachedTransform.position.y + this.speed * Time.deltaTime, this.cachedTransform.position.z);
 			yield return new WaitForFixedUpdate();
 		}
 	}

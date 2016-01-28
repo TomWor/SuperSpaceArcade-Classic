@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
-namespace SuperSpaceArcade {
+namespace SuperSpaceArcade
+{
 
-	public class BackToMenuButton : MonoBehaviour {
+	public class BackToMenuButton : MonoBehaviour
+	{
 
-		public void BackToMenu ()
+		public void BackToMenu()
 		{
-			Application.LoadLevel("Menu");
+			SceneManager.LoadScene("Menu");
 		}
 
 	}

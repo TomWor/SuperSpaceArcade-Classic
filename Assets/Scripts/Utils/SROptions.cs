@@ -1,10 +1,12 @@
 using System.ComponentModel;
 using UnityEngine;
 
-public partial class SROptions {
+public partial class SROptions
+{
 
 	[Category("Utilities")]
-	public void ClearPlayerPrefs() {
+	public void ClearPlayerPrefs()
+	{
 		Debug.Log("Clearing PlayerPrefs");
 		PlayerPrefs.DeleteAll();
 	}
@@ -12,17 +14,17 @@ public partial class SROptions {
 	[Category("Cheats")]
 	public bool Invulnerability {
 		get {
-            GameObject player = GameObject.FindWithTag("Player");
-						if (player) {
-	            return player.GetComponent<Player>().invulnerable;
-						}
-            return false;
-        }
+			GameObject player = GameObject.FindWithTag("Player");
+			if (player) {
+				return player.GetComponent<Player>().invulnerable;
+			}
+			return false;
+		}
 		set {
-            GameObject player = GameObject.FindWithTag("Player");
-						if (player) {
-	            player.GetComponent<Player>().invulnerable = !player.GetComponent<Player>().invulnerable;
-						}
+			GameObject player = GameObject.FindWithTag("Player");
+			if (player) {
+				player.GetComponent<Player>().invulnerable = !player.GetComponent<Player>().invulnerable;
+			}
 		}
 	}
 }

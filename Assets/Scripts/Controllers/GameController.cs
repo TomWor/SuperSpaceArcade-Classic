@@ -26,6 +26,17 @@ public class GameController : SceneController
 	}
 
 
+	public static bool playerInvulnerable;
+
+	public static bool PlayerInvulnerable {
+		get { return playerInvulnerable; }
+		set { 
+			GameController.playerInvulnerable = value;
+			EventManager.PlayerInvulnerable(value);
+		}
+	}
+
+
 	public void Start()
 	{
 		Application.targetFrameRate = 60;
@@ -73,14 +84,13 @@ public class GameController : SceneController
 			yield return new WaitForSeconds(20.0f);
 
 			GameController.currentStressLevel++;
-			Debug.Log("Entering Level: " + GameController.currentStressLevel);
+			//Debug.Log("Entering Level: " + GameController.currentStressLevel);
 
 			if (this.stressLevelColors.Length > GameController.currentStressLevel) {
 				SceneController.currentTrackBorderColor = this.stressLevelColors[GameController.currentStressLevel];
 				EventManager.TrackBorderColorChanged(SceneController.currentTrackBorderColor);
 			}
 		}
-
 	}
 
 

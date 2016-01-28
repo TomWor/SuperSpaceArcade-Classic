@@ -8,25 +8,25 @@ SceneSettings:
   m_PVSPortalsArray: []
   m_OcclusionBakeSettings:
     smallestOccluder: 5
-    smallestHole: .25
+    smallestHole: 0.25
     backfaceThreshold: 100
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
   m_Fog: 0
-  m_FogColor: {r: .880596995, g: .919841349, b: 1, a: 1}
+  m_FogColor: {r: 0.880597, g: 0.91984135, b: 1, a: 1}
   m_FogMode: 2
-  m_FogDensity: .00200000009
+  m_FogDensity: 0.002
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: .889705896, g: .963488817, b: 1, a: 1}
-  m_AmbientEquatorColor: {r: .816176474, g: .885902643, b: 1, a: 1}
-  m_AmbientGroundColor: {r: .816176474, g: .885902643, b: 1, a: 1}
+  m_AmbientSkyColor: {r: 0.8897059, g: 0.9634888, b: 1, a: 1}
+  m_AmbientEquatorColor: {r: 0.8161765, g: 0.88590264, b: 1, a: 1}
+  m_AmbientGroundColor: {r: 0.8161765, g: 0.88590264, b: 1, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SkyboxMaterial: {fileID: 2100000, guid: f91e42a9670d04012984500cd6c6e471, type: 2}
-  m_HaloStrength: .5
+  m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -40,7 +40,7 @@ RenderSettings:
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 5
+  serializedVersion: 6
   m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
@@ -60,13 +60,13 @@ LightmapSettings:
     m_TextureHeight: 1024
     m_AOMaxDistance: 1
     m_Padding: 2
-    m_CompAOExponent: 5.30000019
+    m_CompAOExponent: 5.3
     m_LightmapParameters: {fileID: 0}
     m_TextureCompression: 0
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightmapSnapshot: {fileID: 0}
+  m_LightingDataAsset: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
 NavMeshSettings:
@@ -74,15 +74,15 @@ NavMeshSettings:
   m_ObjectHideFlags: 0
   m_BuildSettings:
     serializedVersion: 2
-    agentRadius: .400000006
-    agentHeight: 1.79999995
+    agentRadius: 0.4
+    agentHeight: 1.8
     agentSlope: 45
-    agentClimb: .400000006
+    agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     accuratePlacement: 0
     minRegionArea: 2
-    cellSize: .133333325
+    cellSize: 0.13333333
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1001 &15819366
@@ -187,8 +187,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -269,6 +271,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -279,6 +282,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -289,6 +293,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -299,6 +304,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &110474354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,7 +432,7 @@ MonoBehaviour:
       songName: Explosion 2
       resourceFileName: 
       volume: 1
-      pitch: 2.56999993
+      pitch: 2.57
       isExpanded: 0
       isLoop: 0
       customStartTime: 0
@@ -444,6 +450,7 @@ MonoBehaviour:
     resourceClipsAllLoadAsync: 1
   _masterAudioVolume: 1
   ignoreTimeScale: 0
+  followAudioListener: 1
   useGaplessPlaylists: 0
   saveRuntimeChanges: 0
   prioritizeOnDistance: 0
@@ -463,11 +470,13 @@ MonoBehaviour:
   showMusicDucking: 0
   enableMusicDucking: 0
   musicDuckingSounds: []
-  defaultRiseVolStart: .5
-  duckedVolumeMultiplier: .5
+  defaultRiseVolStart: 0.5
+  defaultUnduckTime: 1
+  defaultDuckedVolumeMultiplier: 0.5
   crossFadeTime: 1
   _masterPlaylistVolume: 1
   showGroupSelect: 0
+  hideGroupsWithNoActiveVars: 0
   newEventName: 6d79206576656e74
   showCustomEvents: 0
   customEvents: []
@@ -480,14 +489,14 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 110474352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 200, y: 120, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 124621291}
   - {fileID: 1205267885}
   - {fileID: 918435032}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
 --- !u!1 &111125827
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,8 +519,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 111125827}
-  m_LocalRotation: {x: -.22574383, y: -.552333176, z: .299252987, w: -.744590878}
-  m_LocalPosition: {x: -93.9666138, y: -48.2335892, z: 169.83461}
+  m_LocalRotation: {x: -0.22574383, y: -0.5523332, z: 0.299253, w: -0.7445909}
+  m_LocalPosition: {x: -93.96661, y: -48.23359, z: 169.83461}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 529884137}
@@ -526,16 +535,17 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .200000003
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
     m_Resolution: 3
-    m_Strength: .782000005
-    m_Bias: .985000014
-    m_NormalBias: .75999999
+    m_Strength: 0.782
+    m_Bias: 0.985
+    m_NormalBias: 0.76
+    m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -544,7 +554,7 @@ Light:
     serializedVersion: 2
     m_Bits: 32768
   m_Lightmapping: 4
-  m_BounceIntensity: .25999999
+  m_BounceIntensity: 0.26
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
@@ -602,7 +612,7 @@ MonoBehaviour:
   chainLoopMode: 0
   chainLoopNumLoops: 0
   useDialogFadeOut: 0
-  dialogFadeOutTime: .5
+  dialogFadeOutTime: 0.5
   curVariationSequence: 0
   useInactivePeriodPoolRefill: 0
   inactivePeriodSeconds: 5
@@ -617,7 +627,7 @@ MonoBehaviour:
   childSoundGroups: []
   limitMode: 0
   limitPerXFrames: 1
-  minimumTimeBetween: .5
+  minimumTimeBetween: 0.5
   useClipAgePriority: 0
   limitPolyphony: 0
   voiceLimitCount: 1
@@ -653,7 +663,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &171662205
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,12 +686,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 171662205}
-  m_LocalRotation: {x: .815560043, y: -.311033934, z: .387144059, w: .297051042}
+  m_LocalRotation: {x: 0.81556004, y: -0.31103393, z: 0.38714406, w: 0.29705104}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
 --- !u!108 &171662207
 Light:
   m_ObjectHideFlags: 0
@@ -692,7 +702,7 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .200000003
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -702,6 +712,7 @@ Light:
     m_Strength: 1
     m_Bias: 0
     m_NormalBias: 0
+    m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -875,7 +886,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &298895626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -900,9 +911,10 @@ MonoBehaviour:
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
+    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -956,6 +968,18 @@ Prefab:
     - target: {fileID: 462722, guid: b68980bcf2705468ea9d29c9f6aa11b6, type: 2}
       propertyPath: m_LocalScale.y
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11472562, guid: b68980bcf2705468ea9d29c9f6aa11b6, type: 2}
+      propertyPath: skyColor.r
+      value: 0.007352948
+      objectReference: {fileID: 0}
+    - target: {fileID: 11472562, guid: b68980bcf2705468ea9d29c9f6aa11b6, type: 2}
+      propertyPath: skyColor.g
+      value: 0.6713994
+      objectReference: {fileID: 0}
+    - target: {fileID: 11472562, guid: b68980bcf2705468ea9d29c9f6aa11b6, type: 2}
+      propertyPath: skyColor.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b68980bcf2705468ea9d29c9f6aa11b6, type: 2}
@@ -1044,6 +1068,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1054,6 +1079,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1064,6 +1090,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1074,6 +1101,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!82 &423596214
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1114,6 +1142,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1124,6 +1153,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1134,6 +1164,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1144,6 +1175,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &423596215
 Transform:
   m_ObjectHideFlags: 0
@@ -1155,7 +1187,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
 --- !u!1001 &428239709
 Prefab:
   m_ObjectHideFlags: 0
@@ -1264,14 +1296,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 529884136}
-  m_LocalRotation: {x: .241969451, y: -.421456158, z: .0840131044, w: .86992377}
+  m_LocalRotation: {x: 0.24196945, y: -0.42145616, z: 0.084013104, w: 0.8699238}
   m_LocalPosition: {x: 160, y: 120, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 111125828}
   - {fileID: 763560630}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!20 &529884140
 Camera:
   m_ObjectHideFlags: 0
@@ -1288,7 +1320,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
+  near clip plane: 0.3
   far clip plane: 7000
   field of view: 70
   orthographic: 0
@@ -1304,7 +1336,7 @@ Camera:
   m_HDR: 0
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
-  m_StereoSeparation: .0219999999
+  m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
 --- !u!4 &576289672 stripped
 Transform:
@@ -1339,7 +1371,7 @@ Transform:
   - {fileID: 576289672}
   - {fileID: 1346347000}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
 --- !u!4 &763560630 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: fb754321604134a49b4896f0189df268, type: 3}
@@ -1398,7 +1430,7 @@ MonoBehaviour:
   chainLoopMode: 0
   chainLoopNumLoops: 0
   useDialogFadeOut: 0
-  dialogFadeOutTime: .5
+  dialogFadeOutTime: 0.5
   curVariationSequence: 0
   useInactivePeriodPoolRefill: 0
   inactivePeriodSeconds: 5
@@ -1413,7 +1445,7 @@ MonoBehaviour:
   childSoundGroups: []
   limitMode: 0
   limitPerXFrames: 1
-  minimumTimeBetween: .5
+  minimumTimeBetween: 0.5
   useClipAgePriority: 0
   limitPolyphony: 0
   voiceLimitCount: 1
@@ -1450,7 +1482,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0, g: .860000014, b: 1, a: .275000006}
+        second: {r: 0, g: 0.86, b: 1, a: 0.275}
 --- !u!4 &1040756155 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 3e0e553b3b32e4ae2ac6bdeb35e223ed, type: 2}
@@ -1486,11 +1518,11 @@ RectTransform:
   - {fileID: 298895625}
   m_Father: {fileID: 1953504451}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: .5}
-  m_AnchorMax: {x: 1, y: .5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 30}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1135447801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1511,11 +1543,11 @@ MonoBehaviour:
   m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
-    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
-    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
-    m_FadeDuration: .100000001
+    m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -1555,7 +1587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .448529422, g: .748985887, b: 1, a: .690999985}
+  m_Color: {r: 0.44852942, g: 0.7489859, b: 1, a: 0.691}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1602,7 +1634,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
 --- !u!1 &1182073889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,6 +1692,7 @@ MonoBehaviour:
   internetFileLoadStatus: 0
   fxTailTime: 0
   original_pitch: 0
+  original_volume: 0
   isExpanded: 1
   isChecked: 1
   useFades: 0
@@ -1674,6 +1707,7 @@ MonoBehaviour:
   fadeMaxVolume: 0
   curFadeMode: 0
   curDetectEndMode: 0
+  frames: 0
 --- !u!114 &1182073892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1725,6 +1759,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1735,6 +1770,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1745,6 +1781,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1755,6 +1792,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1205267884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,7 +1847,7 @@ MonoBehaviour:
   chainLoopMode: 0
   chainLoopNumLoops: 0
   useDialogFadeOut: 0
-  dialogFadeOutTime: .5
+  dialogFadeOutTime: 0.5
   curVariationSequence: 0
   useInactivePeriodPoolRefill: 0
   inactivePeriodSeconds: 5
@@ -1824,7 +1862,7 @@ MonoBehaviour:
   childSoundGroups: []
   limitMode: 0
   limitPerXFrames: 1
-  minimumTimeBetween: .5
+  minimumTimeBetween: 0.5
   useClipAgePriority: 0
   limitPolyphony: 0
   voiceLimitCount: 1
@@ -1848,8 +1886,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 41.0000191, y: 35, z: 3.00000262}
-  m_Center: {x: 4.00000954, y: .999994934, z: 3.50001645}
+  m_Size: {x: 41.00002, y: 35, z: 3.0000026}
+  m_Center: {x: 4.0000095, y: 0.99999493, z: 3.5000165}
 --- !u!114 &1270593951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1965,6 +2003,7 @@ MonoBehaviour:
   internetFileLoadStatus: 0
   fxTailTime: 0
   original_pitch: 0
+  original_volume: 0
   isExpanded: 1
   isChecked: 1
   useFades: 0
@@ -1979,6 +2018,7 @@ MonoBehaviour:
   fadeMaxVolume: 0
   curFadeMode: 0
   curDetectEndMode: 0
+  frames: 0
 --- !u!114 &1540563640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2030,6 +2070,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2040,6 +2081,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2050,6 +2092,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2060,6 +2103,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1572277322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2172,7 @@ MonoBehaviour:
   internetFileLoadStatus: 0
   fxTailTime: 0
   original_pitch: 0
+  original_volume: 0
   isExpanded: 1
   isChecked: 1
   useFades: 0
@@ -2142,6 +2187,7 @@ MonoBehaviour:
   fadeMaxVolume: 0
   curFadeMode: 0
   curDetectEndMode: 0
+  frames: 0
 --- !u!82 &1572277326
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2182,6 +2228,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2192,6 +2239,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2202,6 +2250,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2212,6 +2261,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1596055909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,7 +2290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 216aed40fa7004a69a54849a42694d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackColor: {r: .129411772, g: .709803939, b: 1, a: 1}
+  trackColor: {r: 0.12941177, g: 0.70980394, b: 1, a: 1}
 --- !u!4 &1596055911
 Transform:
   m_ObjectHideFlags: 0
@@ -2248,11 +2298,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1596055909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -52.2282906, y: -5, z: 50.4470558}
+  m_LocalPosition: {x: -52.22829, y: -5, z: 50.447056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 10
 --- !u!114 &1596055912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2402,6 +2452,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!224 &1953504451
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2414,7 +2465,7 @@ RectTransform:
   m_Children:
   - {fileID: 1135447800}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 12
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -2444,12 +2495,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2119241968}
-  m_LocalRotation: {x: .241969451, y: -.421456158, z: .0840131044, w: .86992377}
+  m_LocalRotation: {x: 0.24196945, y: -0.42145616, z: 0.084013104, w: 0.8699238}
   m_LocalPosition: {x: 200, y: 120, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
 --- !u!20 &2119241970
 Camera:
   m_ObjectHideFlags: 0
@@ -2466,7 +2517,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
+  near clip plane: 0.3
   far clip plane: 7000
   field of view: 70
   orthographic: 0
@@ -2482,7 +2533,7 @@ Camera:
   m_HDR: 0
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
-  m_StereoSeparation: .0219999999
+  m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
 --- !u!81 &2119241971
 AudioListener:
@@ -2549,7 +2600,7 @@ MonoBehaviour:
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
-  m_RepeatDelay: .5
+  m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
 --- !u!114 &2123360486
 MonoBehaviour:
@@ -2576,4 +2627,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 11
