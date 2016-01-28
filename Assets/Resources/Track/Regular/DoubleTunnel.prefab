@@ -302,7 +302,7 @@ MonoBehaviour:
   inConnector: 6
   poolName: Track
   debrisPoolName: Spawns
-  stressLevel: 0
+  stressLevel: 1
   outConnector: 6
   likelyhood: 5
 --- !u!114 &11493846
@@ -322,7 +322,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: stressLevel
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 149610}

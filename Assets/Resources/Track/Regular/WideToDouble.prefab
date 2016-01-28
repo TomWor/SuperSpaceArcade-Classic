@@ -432,7 +432,7 @@ MonoBehaviour:
   inConnector: 4
   poolName: Track
   debrisPoolName: Spawns
-  stressLevel: 0
+  stressLevel: 1
   outConnector: 6
   likelyhood: 5
 --- !u!114 &11464590
@@ -497,6 +497,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: inConnector
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: stressLevel
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
