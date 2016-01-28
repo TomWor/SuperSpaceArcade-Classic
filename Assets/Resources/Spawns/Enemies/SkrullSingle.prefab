@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   likelyhood: 5
+  stressLevel: 1
   spawnType: 2
 --- !u!114 &11459948
 MonoBehaviour:
@@ -249,6 +250,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: originalColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: stressLevel
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

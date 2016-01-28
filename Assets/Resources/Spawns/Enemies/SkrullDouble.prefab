@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   likelyhood: 5
+  stressLevel: 1
   spawnType: 2
 --- !u!114 &11415598
 MonoBehaviour:
@@ -383,6 +384,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: range
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: stressLevel
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
