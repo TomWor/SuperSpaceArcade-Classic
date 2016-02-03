@@ -107,7 +107,7 @@ public class Player : TrackRider
 		if (this.weaponStatus < 3) {
 
 			this.weaponStatus++;
-			Debug.Log("WeaponUPGRADE: " + this.weaponStatus);
+			//Debug.Log("WeaponUPGRADE: " + this.weaponStatus);
 
 			switch (this.weaponStatus) {
 
