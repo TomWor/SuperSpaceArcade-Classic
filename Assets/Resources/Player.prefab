@@ -111,8 +111,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 12, y: 6, z: 12}
+  m_LocalPosition: {x: 0, y: 4.52, z: -0.45}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
   m_RootOrder: 0
@@ -291,7 +291,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 51deb027aa00c452cad359ac0f96227f, type: 3}
 --- !u!33 &3332014
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -416,7 +416,6 @@ MonoBehaviour:
   targetSpeed: 0
   acceleration: 0.5
   jumpSpeed: 85
-  jumpSound: {fileID: 8300000, guid: 2c77570608de94f4c8d675f9655c3105, type: 3}
   gravity: 70
   superGround: 0
   superGroundGravity: 10
@@ -1919,6 +1918,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: userDefinedSounds.Array.data[2].SoundEvents.Array.data[0].soundType
       value: Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -24,6 +24,7 @@ public class Player : TrackRider
 	public GameObject weaponUpgrade2;
 
 	private Transform shipMesh;
+	private Transform shieldMesh;
 	public GameObject explodePrefab;
 
 	public bool gameOver = false;
@@ -61,6 +62,7 @@ public class Player : TrackRider
 	public void Start()
 	{
 		shipMesh = this.cachedTransform.Find("Mesh");
+		shieldMesh = this.cachedTransform.Find("Shield");
 		EventManager.onPlayerAddPoints += this.OnPlayerAddPoints;
 
 		StartCoroutine(CheckForFallingDeath(this.trackGenerator));
@@ -127,6 +129,7 @@ public class Player : TrackRider
 		GameController.PlayerInvulnerable = true;
 		this.invulnerabilityCountdown = 10;
 		MasterAudio.FireCustomEvent("Invulnerability", this.cachedTransform.position);
+		this.shieldMesh.gameObject.SetActive(true);
 		StartCoroutine(this.InvulnerabilityCountdown());
 	}
 
@@ -144,6 +147,7 @@ public class Player : TrackRider
 				this.invulnerable = false;
 				MasterAudio.FireCustomEvent("InvulnerabilityOver", this.cachedTransform.position);
 				GameController.PlayerInvulnerable = false;
+				this.shieldMesh.gameObject.SetActive(false);
 				yield break;
 			}
 
