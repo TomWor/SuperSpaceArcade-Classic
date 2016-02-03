@@ -22,6 +22,7 @@ public class Player : TrackRider
 
 	public GameObject weaponUpgrade1;
 	public GameObject weaponUpgrade2;
+	public int weaponUpgradeCountdown = 10;
 
 	private Transform shipMesh;
 	private Transform shieldMesh;
@@ -65,7 +66,8 @@ public class Player : TrackRider
 		shieldMesh = this.cachedTransform.Find("Shield");
 		EventManager.onPlayerAddPoints += this.OnPlayerAddPoints;
 
-		StartCoroutine(CheckForFallingDeath(this.trackGenerator));
+		//StartCoroutine(CheckForFallingDeath(this.trackGenerator));
+		StartCoroutine(this.WeaponUpgradeCountdown());
 	}
 
 
@@ -102,24 +104,69 @@ public class Player : TrackRider
 
 	public void UpgradeWeapon()
 	{
-		if (weaponStatus < 3) {
-			weaponStatus++;
+		if (this.weaponStatus < 3) {
 
-			switch (weaponStatus) {
+			this.weaponStatus++;
+			Debug.Log("WeaponUPGRADE: " + this.weaponStatus);
+
+			switch (this.weaponStatus) {
 
 			case 2:
 				this.weaponUpgrade1.SetActive(true);
 				break;
 
 			case 3:
-				this.weaponUpgrade1.SetActive(false);
 				this.weaponUpgrade2.SetActive(true);
 				break;
 
 			}
+
 		} else {
-			weaponStatus = 3;
 			this.PowerUpPoints(256);
+		}
+
+		this.weaponUpgradeCountdown += 10;
+	}
+
+
+	public IEnumerator WeaponUpgradeCountdown()
+	{
+		while (!this.gameOver) {
+
+			//Debug.Log(this.weaponUpgradeCountdown);
+
+			if (this.weaponStatus >= 2) {
+
+				this.weaponUpgradeCountdown--;
+
+				if (this.weaponUpgradeCountdown <= 5) {
+
+					if (this.weaponStatus == 3) {
+						this.weaponUpgrade2.GetComponent<PulseTextureAlpha>().enabled = true;
+					} else if (this.weaponStatus == 2) {
+						this.weaponUpgrade1.GetComponent<PulseTextureAlpha>().enabled = true;
+					} 
+				}
+
+				if (this.weaponUpgradeCountdown <= 0) {
+
+					this.weaponStatus--;
+					//Debug.Log("WeaponStatus: " + this.weaponStatus);
+
+					if (this.weaponStatus == 2) {
+						this.weaponUpgrade2.SetActive(false);
+					} else if (this.weaponStatus <= 1) {
+						this.weaponUpgrade1.SetActive(false);
+					} 
+
+					this.weaponUpgrade1.GetComponent<PulseTextureAlpha>().enabled = false;
+					this.weaponUpgrade2.GetComponent<PulseTextureAlpha>().enabled = false;
+
+					this.weaponUpgradeCountdown += 10;
+				}
+			}
+
+			yield return new WaitForSeconds(1.0f);
 		}
 	}
 
@@ -157,6 +204,7 @@ public class Player : TrackRider
 
 	public void GameOver()
 	{
+		StopAllCoroutines();
 		Destroy(this.gameObject.GetComponent<ShipController>());
 		Destroy(shipMesh.gameObject);
 

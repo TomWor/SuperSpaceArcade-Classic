@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 33: {fileID: 3300002}
   - 23: {fileID: 2300002}
+  - 114: {fileID: 11478312}
   m_Layer: 8
   m_Name: Shield
   m_TagString: Untagged
@@ -80,6 +81,7 @@ GameObject:
   - 33: {fileID: 3334866}
   - 23: {fileID: 2322928}
   - 64: {fileID: 6456196}
+  - 114: {fileID: 11438802}
   m_Layer: 8
   m_Name: WeaponUpgrade1
   m_TagString: Untagged
@@ -97,6 +99,7 @@ GameObject:
   - 4: {fileID: 402318}
   - 23: {fileID: 2327898}
   - 33: {fileID: 3398166}
+  - 114: {fileID: 11463894}
   m_Layer: 8
   m_Name: WeaponUpgrade2
   m_TagString: Untagged
@@ -217,7 +220,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 27f89cbe35f5547a6974610b667f1733, type: 2}
+  - {fileID: 2100000, guid: 891aa868eb5d640a194d75417681f27c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -243,7 +246,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 27f89cbe35f5547a6974610b667f1733, type: 2}
+  - {fileID: 2100000, guid: 891aa868eb5d640a194d75417681f27c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1714,6 +1717,39 @@ MonoBehaviour:
   useUnitySubmitSound: 0
   useUnityCancelSound: 0
   useUnityToggleSound: 0
+--- !u!114 &11438802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110284}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72318310a9f0a4781a07c21416559e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11463894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154848}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72318310a9f0a4781a07c21416559e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11478312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72318310a9f0a4781a07c21416559e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!143 &14300000
 CharacterController:
   m_ObjectHideFlags: 1
