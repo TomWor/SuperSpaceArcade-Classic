@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPowerUps: 1
-  spawnEnemies: 1
-  spawnObstacles: 0
+  spawnEnemies: 0
+  spawnObstacles: 1
   spawnDecals: 1
 --- !u!114 &11430052
 MonoBehaviour:
@@ -208,6 +208,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spawnObstacles
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawnEnemies
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
