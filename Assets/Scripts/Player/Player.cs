@@ -53,28 +53,21 @@ public class Player : TrackRider
 	}
 
 
-	public override void OnTrackCreated(TrackGenerator trackGenerator)
-	{
-		base.OnTrackCreated(trackGenerator);
-		StartCoroutine(this.CheckForFallingDeath(trackGenerator));
-	}
-
-
 	public void Start()
 	{
 		shipMesh = this.cachedTransform.Find("Mesh");
 		shieldMesh = this.cachedTransform.Find("Shield");
 		EventManager.onPlayerAddPoints += this.OnPlayerAddPoints;
 
-		//StartCoroutine(CheckForFallingDeath(this.trackGenerator));
+		StartCoroutine(CheckForFallingDeath());
 		StartCoroutine(this.WeaponUpgradeCountdown());
 	}
 
 
-	protected IEnumerator CheckForFallingDeath(TrackGenerator trackGenerator)
+	protected IEnumerator CheckForFallingDeath()
 	{
 		while (!this.gameOver) {
-			if (this.cachedTransform.position.y < trackGenerator.CurrentTrackTileVerticalOffset - 100) {
+			if (this.cachedTransform.position.y < this.trackGenerator.CurrentTrackTileVerticalOffset - 100) {
 				this.GameOver();
 			}
 			yield return new WaitForSeconds(0.5f);
