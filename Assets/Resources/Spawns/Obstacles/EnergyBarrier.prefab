@@ -210,6 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   likelyhood: 5
+  stressLevel: 2
   spawnType: 3
 --- !u!114 &11489582
 MonoBehaviour:
@@ -225,6 +226,8 @@ MonoBehaviour:
   explodePrefab: {fileID: 0}
   health: 1
   hitColor: {r: 0, g: 0, b: 0, a: 0}
+  blinkColor: {r: 0, g: 0, b: 0, a: 0}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   explosionForce: 15
   points: 8
   exploded: 0
@@ -281,6 +284,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: colorItems.Array.data[0].name
       value: TrackBorder
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: stressLevel
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
