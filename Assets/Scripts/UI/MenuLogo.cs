@@ -4,13 +4,15 @@ using System.Collections;
 public class MenuLogo : MonoBehaviour
 {
 	new Camera camera;
-	GameObject mainMenu;
+	GameObject mainMenu, creditsScreen;
 
 	void Start()
 	{
 		this.camera = GameObject.Find("FrontElementCamera").GetComponent<Camera>();
-		this.mainMenu = GameObject.Find("MainMenu");
+		this.mainMenu = GameObject.FindWithTag("MainMenu");
 		this.mainMenu.SetActive(false);
+		this.creditsScreen = GameObject.FindWithTag("CreditsScreen");
+		this.creditsScreen.SetActive(false);
 	}
 
 	void Update()

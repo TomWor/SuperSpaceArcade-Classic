@@ -17,6 +17,7 @@ TagManager:
   - GameOverUI
   - MainMenu
   - Sun
+  - CreditsScreen
   layers:
   - Default
   - TransparentFX
