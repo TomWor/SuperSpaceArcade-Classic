@@ -22,6 +22,8 @@ public class EventManager : MonoBehaviour
 
 	public static void PlayerSpawned(TrackRider player)
 	{
+		onPlayerInvulnerable = null;
+
 		if (onPlayerSpawned != null)
 			onPlayerSpawned(player);
 	}
