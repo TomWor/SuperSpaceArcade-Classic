@@ -91,6 +91,8 @@ public class ShipController : MonoBehaviour
 			// Get horizontal axis steering
 #if UNITY_EDITOR
 			this.moveDirection.x = Input.GetAxis("Horizontal") * this.horizontalSpeed;
+#elif UNITY_STANDALONE
+			this.moveDirection.x = Input.GetAxis("Horizontal") * this.horizontalSpeed;
 #elif UNITY_ANDROID
         this.moveDirection.x = Input.acceleration.x * this.horizontalSpeed * this.horizontalSpeedMobileMultiplier;
 #elif UNITY_IOS
@@ -105,11 +107,21 @@ public class ShipController : MonoBehaviour
 				Debug.Break();
 			}
 
+			if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.S)) {
+				this.Shoot();
+			}
+
+			if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space)) {
+				this.Jump();
+			}
+
 			if ((Input.GetAxis("Horizontal") > 0.3f || Input.GetAxis("Horizontal") < -0.3f) || (Input.acceleration.x > 0.1f || Input.acceleration.x < -0.1f)) {
 
 				if (shipMesh.rotation.z > -0.3 && shipMesh.rotation.z < 0.3) {
 
 #if UNITY_EDITOR
+					this.shipRotation = Input.GetAxis("Horizontal") * 50 * Time.deltaTime * -1 * 2.0f;
+#elif UNITY_STANDALONE
 					this.shipRotation = Input.GetAxis("Horizontal") * 50 * Time.deltaTime * -1 * 2.0f;
 #elif UNITY_ANDROID
 				this.shipRotation = Input.acceleration.x * 50 * Time.deltaTime * -1 * 2.0f * this.horizontalSpeedMobileMultiplier;
