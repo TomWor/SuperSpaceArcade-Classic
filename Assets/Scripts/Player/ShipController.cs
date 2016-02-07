@@ -78,6 +78,7 @@ public class ShipController : MonoBehaviour
 
 			if (this.controller.isGrounded) {
 				this.moveDirection = new Vector3(0, 0, 0);
+				this.superGround = false;
 			}
 
 			this.moveDirection.z = this.currentSpeed;
@@ -107,6 +108,9 @@ public class ShipController : MonoBehaviour
 				Debug.Break();
 			}
 
+#if UNITY_EDITOR
+
+#elif UNITY_STANDALONE
 			if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.S)) {
 				this.Shoot();
 			}
@@ -114,7 +118,7 @@ public class ShipController : MonoBehaviour
 			if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space)) {
 				this.Jump();
 			}
-
+#endif
 			if ((Input.GetAxis("Horizontal") > 0.3f || Input.GetAxis("Horizontal") < -0.3f) || (Input.acceleration.x > 0.1f || Input.acceleration.x < -0.1f)) {
 
 				if (shipMesh.rotation.z > -0.3 && shipMesh.rotation.z < 0.3) {
