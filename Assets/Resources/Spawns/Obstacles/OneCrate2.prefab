@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3398756}
   - 23: {fileID: 2316632}
   - 65: {fileID: 6509634}
-  - 114: {fileID: 11496762}
+  - 114: {fileID: 11443782}
   m_Layer: 14
   m_Name: Container
   m_TagString: Obstacle
@@ -100,7 +100,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162150}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 25.000004, y: 25, z: 25.000004}
@@ -119,7 +119,7 @@ MonoBehaviour:
   likelyhood: 3
   stressLevel: 0
   spawnType: 3
---- !u!114 &11496762
+--- !u!114 &11443782
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -127,17 +127,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 162150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a678682b76694cf8ab47662535d2285, type: 3}
+  m_Script: {fileID: 11500000, guid: 470660f42b6434ae69b03a0a357c341e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodePrefab: {fileID: 188376, guid: 6e6ad75a63c814c1eac12c0d18170202, type: 2}
-  health: 10
-  hitColor: {r: 0, g: 0, b: 0, a: 0}
-  blinkColor: {r: 0, g: 0, b: 0, a: 0}
-  originalColor: {r: 0, g: 0, b: 0, a: 0}
-  explosionForce: 2
-  points: 8
   exploded: 0
+  explosionForce: 2
+  health: 10
+  points: 8
+  explodePrefab: {fileID: 188376, guid: 6e6ad75a63c814c1eac12c0d18170202, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -167,7 +164,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: explosionForce

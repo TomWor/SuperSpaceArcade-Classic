@@ -27,7 +27,7 @@ GameObject:
   - 33: {fileID: 3364844}
   - 23: {fileID: 2364844}
   - 65: {fileID: 6564844}
-  - 114: {fileID: 11437230}
+  - 114: {fileID: 11443236}
   m_Layer: 14
   m_Name: Crate
   m_TagString: Obstacle
@@ -46,7 +46,7 @@ GameObject:
   - 33: {fileID: 3364846}
   - 23: {fileID: 2364846}
   - 65: {fileID: 6564846}
-  - 114: {fileID: 11409752}
+  - 114: {fileID: 11414988}
   m_Layer: 14
   m_Name: Crate
   m_TagString: Obstacle
@@ -65,7 +65,7 @@ GameObject:
   - 33: {fileID: 3364848}
   - 23: {fileID: 2364848}
   - 65: {fileID: 6564848}
-  - 114: {fileID: 11488546}
+  - 114: {fileID: 11449788}
   m_Layer: 14
   m_Name: Crate
   m_TagString: Obstacle
@@ -230,7 +230,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164844}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 25, y: 25, z: 25}
@@ -242,7 +242,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164846}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 24.999998, y: 25, z: 24.999998}
@@ -254,12 +254,12 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164848}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 25, y: 25, z: 25}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11409752
+--- !u!114 &11414988
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -267,17 +267,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 164846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a678682b76694cf8ab47662535d2285, type: 3}
+  m_Script: {fileID: 11500000, guid: 470660f42b6434ae69b03a0a357c341e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodePrefab: {fileID: 188376, guid: 6e6ad75a63c814c1eac12c0d18170202, type: 2}
-  health: 10
-  hitColor: {r: 1, g: 0, b: 0, a: 0}
-  blinkColor: {r: 0, g: 0, b: 0, a: 0}
-  originalColor: {r: 0, g: 0, b: 0, a: 0}
-  explosionForce: 2
-  points: 8
   exploded: 0
+  explosionForce: 2
+  health: 10
+  points: 8
+  explodePrefab: {fileID: 188376, guid: 6e6ad75a63c814c1eac12c0d18170202, type: 2}
 --- !u!114 &11427952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,7 +289,7 @@ MonoBehaviour:
   likelyhood: 5
   stressLevel: 0
   spawnType: 3
---- !u!114 &11437230
+--- !u!114 &11443236
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -300,18 +297,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 164844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a678682b76694cf8ab47662535d2285, type: 3}
+  m_Script: {fileID: 11500000, guid: 470660f42b6434ae69b03a0a357c341e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodePrefab: {fileID: 188376, guid: 6e6ad75a63c814c1eac12c0d18170202, type: 2}
-  health: 10
-  hitColor: {r: 1, g: 0, b: 0, a: 0}
-  blinkColor: {r: 0, g: 0, b: 0, a: 0}
-  originalColor: {r: 0, g: 0, b: 0, a: 0}
-  explosionForce: 2
-  points: 8
   exploded: 0
---- !u!114 &11488546
+  explosionForce: 2
+  health: 10
+  points: 8
+  explodePrefab: {fileID: 188376, guid: 6e6ad75a63c814c1eac12c0d18170202, type: 2}
+--- !u!114 &11449788
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -319,17 +313,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 164848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a678682b76694cf8ab47662535d2285, type: 3}
+  m_Script: {fileID: 11500000, guid: 470660f42b6434ae69b03a0a357c341e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodePrefab: {fileID: 188376, guid: 6e6ad75a63c814c1eac12c0d18170202, type: 2}
-  health: 10
-  hitColor: {r: 1, g: 0, b: 0, a: 0}
-  blinkColor: {r: 0, g: 0, b: 0, a: 0}
-  originalColor: {r: 0, g: 0, b: 0, a: 0}
-  explosionForce: 2
-  points: 8
   exploded: 0
+  explosionForce: 2
+  health: 10
+  points: 8
+  explodePrefab: {fileID: 188376, guid: 6e6ad75a63c814c1eac12c0d18170202, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -347,7 +338,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: explodePrefab
