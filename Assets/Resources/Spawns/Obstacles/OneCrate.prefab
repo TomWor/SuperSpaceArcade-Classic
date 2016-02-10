@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   likelyhood: 3
+  stressLevel: 0
   spawnType: 3
 --- !u!114 &11487802
 MonoBehaviour:
@@ -130,8 +131,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explodePrefab: {fileID: 188376, guid: 6e6ad75a63c814c1eac12c0d18170202, type: 2}
-  health: 3
+  health: 10
   hitColor: {r: 0, g: 0, b: 0, a: 0}
+  blinkColor: {r: 0, g: 0, b: 0, a: 0}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   explosionForce: 2
   points: 8
   exploded: 0
@@ -172,7 +175,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: health
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
