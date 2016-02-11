@@ -46,6 +46,7 @@ public class Destructible : MonoBehaviour
 
 			// Only replace the prefab if an explode prefab is provided, otherwise stay, e.g. boxes, energy barriers
 			if (this.explodePrefab) {
+
 				Transform explodedEnemy = this.pool.Spawn(explodePrefab.transform, this.cachedTransform.position, Quaternion.identity, parentTrackTile.transform);
 
 				// Catch all debris elements with and Overlapsphere and maybe even other debris not part of the enemy object
