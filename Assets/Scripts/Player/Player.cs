@@ -201,8 +201,11 @@ public class Player : TrackRider
 		StopAllCoroutines();
 
 		MasterAudio.FireCustomEvent("InvulnerabilityOver", this.cachedTransform.position);
+		this.shieldMesh.gameObject.SetActive(false);
+
 		this.weaponUpgrade1.GetComponent<PulseTextureAlpha>().enabled = false;
 		this.weaponUpgrade2.GetComponent<PulseTextureAlpha>().enabled = false;
+
 
 		this.gameObject.GetComponent<ShipController>().enabled = false;
 		shipMesh.gameObject.SetActive(false);
