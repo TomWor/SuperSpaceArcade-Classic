@@ -195,11 +195,17 @@ public class Player : TrackRider
 		}
 	}
 
+
 	public void GameOver()
 	{
 		StopAllCoroutines();
-		Destroy(this.gameObject.GetComponent<ShipController>());
-		Destroy(shipMesh.gameObject);
+
+		MasterAudio.FireCustomEvent("InvulnerabilityOver", this.cachedTransform.position);
+		this.weaponUpgrade1.GetComponent<PulseTextureAlpha>().enabled = false;
+		this.weaponUpgrade2.GetComponent<PulseTextureAlpha>().enabled = false;
+
+		this.gameObject.GetComponent<ShipController>().enabled = false;
+		shipMesh.gameObject.SetActive(false);
 
 		gameOver = true;
 		this.gameOverUI.transform.Find("ScorePanel/Score").GetComponent<Text>().text = this.points.ToString();
@@ -210,7 +216,9 @@ public class Player : TrackRider
 		Rigidbody[] rigidbodies = shipExploded.GetComponentsInChildren<Rigidbody>();
 
 		foreach (Rigidbody body in rigidbodies) {
-			body.AddExplosionForce(Random.Range(4000, 12000), new Vector3(transform.position.x, transform.position.y, transform.position.z - 10.0f), Random.Range(2, 10), 3.0f);
+			//body.AddExplosionForce(Random.Range(1000, 2000), new Vector3(transform.position.x, transform.position.y, transform.position.z - 1.0f), Random.Range(2, 10), 300.0f);
+			Vector3 explosionPosition = this.cachedTransform.position - new Vector3(0, 0, 10.0f);
+			body.AddExplosionForce(Random.Range(240, 360), explosionPosition, 100.0f, 3.0f, ForceMode.Impulse);
 		}
 
 	}
