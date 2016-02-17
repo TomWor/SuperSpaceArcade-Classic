@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3339174}
   - 23: {fileID: 2356818}
   - 114: {fileID: 11414034}
+  - 65: {fileID: 6517038}
   m_Layer: 10
   m_Name: EngineBelow
   m_TagString: Untagged
@@ -29,6 +30,7 @@ GameObject:
   - 33: {fileID: 3365818}
   - 23: {fileID: 2321746}
   - 114: {fileID: 11479550}
+  - 65: {fileID: 6525278}
   m_Layer: 10
   m_Name: Engine
   m_TagString: Untagged
@@ -47,6 +49,7 @@ GameObject:
   - 33: {fileID: 3307998}
   - 23: {fileID: 2346178}
   - 114: {fileID: 11402856}
+  - 65: {fileID: 6544008}
   m_Layer: 10
   m_Name: EngineHigherAbove
   m_TagString: Untagged
@@ -81,6 +84,7 @@ GameObject:
   - 33: {fileID: 3344064}
   - 23: {fileID: 2372632}
   - 114: {fileID: 11445530}
+  - 65: {fileID: 6566678}
   m_Layer: 10
   m_Name: EngineAbove
   m_TagString: Untagged
@@ -170,8 +174,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -194,8 +200,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -218,8 +226,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -242,8 +252,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -276,6 +288,54 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131064}
   m_Mesh: {fileID: 4300000, guid: c5f6ff2c4a8b34d8ea9cba2cb10b3834, type: 3}
+--- !u!65 &6517038
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110596}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 80, y: 80, z: 80}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &6525278
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131064}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 80, y: 80, z: 80}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &6544008
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 80, y: 80, z: 80}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &6566678
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164444}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 80, y: 80, z: 80}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11402856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -287,7 +347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155aeb5bd341b984a9d3ce3b669adb7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xform: {fileID: 420284}
   speed: 1
   randomStart: 0
 --- !u!114 &11410906
@@ -318,7 +377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155aeb5bd341b984a9d3ce3b669adb7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xform: {fileID: 440176}
   speed: -1
   randomStart: 0
 --- !u!114 &11445530
@@ -332,7 +390,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155aeb5bd341b984a9d3ce3b669adb7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xform: {fileID: 414414}
   speed: -1
   randomStart: 0
 --- !u!114 &11479550
@@ -346,7 +403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155aeb5bd341b984a9d3ce3b669adb7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xform: {fileID: 402982}
   speed: 1
   randomStart: 0
 --- !u!1001 &100100000
