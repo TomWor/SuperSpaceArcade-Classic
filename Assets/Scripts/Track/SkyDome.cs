@@ -38,14 +38,14 @@ public class SkyDome : MonoBehaviour
 	public void OnEnable()
 	{
 		EventManager.onPlayerSpawned += this.OnPlayerSpawned;
-		//EventManager.onTrackBorderColorChanged += this.OnTrackBorderColorChanged;
+		EventManager.onTrackBorderColorChanged += this.OnTrackBorderColorChanged;
 	}
 
 
 	public void OnDisable()
 	{
 		EventManager.onPlayerSpawned -= this.OnPlayerSpawned;
-		//EventManager.onTrackBorderColorChanged -= this.OnTrackBorderColorChanged;
+		EventManager.onTrackBorderColorChanged -= this.OnTrackBorderColorChanged;
 	}
 
 
