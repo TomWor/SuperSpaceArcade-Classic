@@ -7,9 +7,9 @@ PhysicsManager:
   m_Gravity: {x: 0, y: -250, z: 0}
   m_DefaultMaterial: {fileID: 0}
   m_BounceThreshold: 2
-  m_SleepThreshold: .00499999989
-  m_DefaultContactOffset: .00999999978
+  m_SleepThreshold: 0.005
+  m_DefaultContactOffset: 0.01
   m_SolverIterationCount: 6
   m_QueriesHitTriggers: 1
   m_EnableAdaptiveForce: 0
-  m_LayerCollisionMatrix: ffddffffffd5ffffffd5ffffffffffffffd5ffffffd5ffffffffffffffffffffffddffffc8d6ffffffffffffc9ddffffffffffffc8d4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  m_LayerCollisionMatrix: ffddffffffd5ffffffd5ffffffffffffffd5ffffffd5ffffffffffffffffffffffdcffffc8d6ffffffffffffc9ddffffffffffffc8d4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
