@@ -2,11 +2,14 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class SuperSpaceArcadePlayButton : MonoBehaviour
+namespace SuperSpaceArcade
 {
-
-	public void EnterGame()
+	public class SuperSpaceArcadePlayButton : MonoBehaviour
 	{
-		SceneManager.LoadScene("Game");
+
+		public void EnterGame()
+		{
+			EventManager.GameStart();
+		}
 	}
 }

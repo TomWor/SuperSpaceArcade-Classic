@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class QuitButton : MonoBehaviour
+namespace SuperSpaceArcade
 {
-	public void QuitGame()
+
+	public class QuitButton : MonoBehaviour
 	{
-		Application.Quit();
+		public void QuitGame()
+		{
+			Application.Quit();
+		}
 	}
+
 }

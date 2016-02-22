@@ -3,23 +3,11 @@ using System.Collections;
 
 public class MenuLogo : MonoBehaviour
 {
-	new Camera camera;
-	GameObject mainMenu, creditsScreen;
-
-	void Start()
-	{
-		this.camera = GameObject.Find("FrontElementCamera").GetComponent<Camera>();
-		this.mainMenu = GameObject.FindWithTag("MainMenu");
-		this.mainMenu.SetActive(false);
-		this.creditsScreen = GameObject.FindWithTag("CreditsScreen");
-		this.creditsScreen.SetActive(false);
-	}
-
 	void Update()
 	{
 		if (Input.GetMouseButtonDown(0)) { // if left button pressed...
 
-			Ray ray = this.camera.ScreenPointToRay(Input.mousePosition);
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 			int layerMask = 1 << 15;
 
@@ -27,7 +15,7 @@ public class MenuLogo : MonoBehaviour
 
 				Transform selected = hit.transform;
 				selected.gameObject.SetActive(false);
-				this.mainMenu.SetActive(true);
+				//this.mainMenu.SetActive(true);
 			}
 		}
 	}

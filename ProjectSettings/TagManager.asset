@@ -18,6 +18,7 @@ TagManager:
   - MainMenu
   - Sun
   - CreditsScreen
+  - MenuLogo
   layers:
   - Default
   - TransparentFX

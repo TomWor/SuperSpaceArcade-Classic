@@ -6,33 +6,33 @@ namespace SuperSpaceArcade
 
 	public class ShootButton : MonoBehaviour
 	{
-		private TrackRider player;
+		private TrackSpectator player;
 		private ShipController shipController;
 
-		public void Shoot ()
+		public void Shoot()
 		{
 			if (this.shipController) {
-				this.shipController.Shoot ();
+				this.shipController.Shoot();
 			}
 		}
 
 
-		public void OnEnable ()
+		public void OnEnable()
 		{
 			EventManager.onPlayerSpawned += this.OnPlayerSpawned;
 		}
 
 
-		public void OnDisable ()
+		public void OnDisable()
 		{
 			EventManager.onPlayerSpawned -= this.OnPlayerSpawned;
 		}
 
 
-		public void OnPlayerSpawned (TrackRider player)
+		public void OnPlayerSpawned(TrackSpectator player)
 		{
 			this.player = player;
-			this.shipController = this.player.GetComponent<ShipController> ();
+			this.shipController = this.player.GetComponent<ShipController>();
 		}
 
 	}
