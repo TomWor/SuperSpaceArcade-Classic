@@ -69,7 +69,7 @@ namespace SuperSpaceArcade
 		}
 
 
-		public void OnPlayerAddPoints(int value, Vector3 sourcePosition, Quaternion sourceRotation)
+		public void OnPlayerAddPoints(int value, Vector3 sourcePosition, Quaternion sourceRotation, Transform target)
 		{
 			this.points += value;
 		}

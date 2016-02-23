@@ -37,9 +37,6 @@ namespace SuperSpaceArcade
 
 		public void Explode()
 		{
-			// Spawn points prefab
-			int playerAddPoints = GameController.playerInvulnerable ? this.points * 2 : this.points;
-			EventManager.PlayerAddPoints(playerAddPoints, this.cachedTransform.position, this.cachedTransform.rotation);
 
 			// Check if the enemy is already exploded
 			// Prevent multiple explosions triggering
@@ -70,6 +67,10 @@ namespace SuperSpaceArcade
 					// but leave despawn logic to the parent tracktile to not mess with
 					// track despawn workflow
 					this.transform.position += Vector3.down * 2000;
+
+					// Spawn points prefab
+					int playerAddPoints = GameController.playerInvulnerable ? this.points * 2 : this.points;
+					EventManager.PlayerAddPoints(playerAddPoints, explodedEnemy.position + new Vector3(0, 10, 0), this.cachedTransform.rotation, explodedEnemy);
 				}
 			}
 		}

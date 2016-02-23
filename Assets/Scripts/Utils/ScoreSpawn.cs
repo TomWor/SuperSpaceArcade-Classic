@@ -45,9 +45,9 @@ namespace SuperSpaceArcade
 
 
 		// Update is called once per frame
-		public void SpawnPoints(int points, Vector3 sourcePosition, Quaternion sourceRotation)
+		public void SpawnPoints(int points, Vector3 sourcePosition, Quaternion sourceRotation, Transform target)
 		{
-			Transform scorePrefab = PoolManager.Pools[this.poolName].Spawn("Score", sourcePosition, Quaternion.identity, GameController.Player.transform);
+			Transform scorePrefab = PoolManager.Pools[this.poolName].Spawn("Score", sourcePosition, Quaternion.identity, target);
 			scorePrefab.gameObject.GetComponent<Score>().ScoreValue = points;
 		}
 	}

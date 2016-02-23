@@ -8,9 +8,10 @@ namespace SuperSpaceArcade
 	{
 		public int targetFrameRate = 60;
 		public Color[] stressLevelColors;
+		public GameObject playerObject;
 
-		public static GameObject mainMenu, creditsScreen, gameOverUI, menuLogo, inGameUI;
-		public static GameObject mainCamera;
+		public GameObject mainMenu, creditsScreen, gameOverUI, menuLogo, inGameUI;
+		public GameObject mainCamera;
 
 		private static int currentStressLevel = 0;
 
@@ -24,12 +25,12 @@ namespace SuperSpaceArcade
 		public static Color currentTrackBorderColor;
 
 
-		protected static TrackGenerator trackGenerator;
+		private TrackGenerator trackGenerator;
 
-		public static TrackGenerator TrackGenerator {
+		public TrackGenerator TrackGenerator {
 			get { return trackGenerator; }
 			set {
-				GameController.trackGenerator = value;
+				this.trackGenerator = value;
 			}
 		}
 
@@ -47,12 +48,12 @@ namespace SuperSpaceArcade
 		}
 
 
-		private static Player player;
+		private Player player;
 
-		public static Player Player {
+		public Player Player {
 			get { return player; }
 			set {
-				GameController.player = value;
+				this.player = value;
 				EventManager.PlayerSpawned(value);
 			}
 		}
@@ -81,25 +82,23 @@ namespace SuperSpaceArcade
 				}
 			};
 
-			GameController.mainCamera = Camera.main.gameObject;
+			this.mainCamera = Camera.main.gameObject;
+			this.TrackGenerator = GameObject.FindWithTag("TrackGenerator").GetComponent<TrackGenerator>();
 
-			GameController.TrackGenerator = GameObject.FindWithTag("TrackGenerator").GetComponent<TrackGenerator>();
-			//GameController.TrackGenerator.
+			this.mainMenu = GameObject.FindWithTag("MainMenu");
+			this.mainMenu.SetActive(true);
 
-			GameController.mainMenu = GameObject.FindWithTag("MainMenu");
-			GameController.mainMenu.SetActive(true);
+			this.creditsScreen = GameObject.FindWithTag("CreditsScreen");
+			this.creditsScreen.SetActive(false);
 
-			GameController.creditsScreen = GameObject.FindWithTag("CreditsScreen");
-			GameController.creditsScreen.SetActive(false);
+			this.gameOverUI = GameObject.FindWithTag("GameOverUI");
+			this.gameOverUI.SetActive(false);
 
-			GameController.gameOverUI = GameObject.FindWithTag("GameOverUI");
-			GameController.gameOverUI.SetActive(false);
+			this.menuLogo = GameObject.FindWithTag("MenuLogo");
+			this.menuLogo.SetActive(false);
 
-			GameController.menuLogo = GameObject.FindWithTag("MenuLogo");
-			GameController.menuLogo.SetActive(false);
-
-			GameController.inGameUI = GameObject.FindWithTag("InGameUI");
-			GameController.inGameUI.SetActive(false);
+			this.inGameUI = GameObject.FindWithTag("InGameUI");
+			this.inGameUI.SetActive(false);
 
 			this.setInitialStressLevel();
 		}
@@ -121,15 +120,17 @@ namespace SuperSpaceArcade
 
 		public void OnGameStart()
 		{
-			GameController.mainMenu.SetActive(false);
-			GameController.mainCamera.GetComponent<MenuCamera>().enabled = false;
 
-			GameObject PlayerObject = Instantiate(Resources.Load("Player", typeof(GameObject))) as GameObject;
-			GameController.Player = PlayerObject.GetComponent<Player>();
-			GameController.Player.TrackGenerator = GameController.TrackGenerator;
-			GameController.TrackGenerator.ResetTrack();
+			this.gameOverUI.SetActive(false);
+			this.mainMenu.SetActive(false);
+			this.mainCamera.GetComponent<MenuCamera>().enabled = false;
 
-			EventManager.PlayerSpawned(GameController.Player);
+			this.playerObject = Instantiate(Resources.Load("Player", typeof(GameObject))) as GameObject;
+			this.Player = this.playerObject.GetComponent<Player>();
+			this.Player.TrackGenerator = this.TrackGenerator;
+			this.TrackGenerator.ResetTrack();
+
+			EventManager.PlayerSpawned(this.Player);
 
 			this.setInitialStressLevel();
 			StartCoroutine(this.UpdateStressLevel());
@@ -138,8 +139,9 @@ namespace SuperSpaceArcade
 
 		public void OnGameOver()
 		{
-			GameController.gameOverUI.SetActive(true);
-			GameController.gameOverUI.transform.Find("ScorePanel/Score").GetComponent<Text>().text = GameController.Player.points.ToString();
+			this.gameOverUI.SetActive(true);
+			this.gameOverUI.transform.Find("ScorePanel/Score").GetComponent<Text>().text = this.Player.points.ToString();
+			Destroy(this.playerObject);
 		}
 
 

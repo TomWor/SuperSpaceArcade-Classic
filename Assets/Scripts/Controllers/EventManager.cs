@@ -5,6 +5,8 @@ namespace SuperSpaceArcade
 {
 	public class EventManager : MonoBehaviour
 	{
+		public static TrackSpectator player;
+
 		public delegate void GameStartHandler();
 
 		public static event GameStartHandler onGameStart;
@@ -13,7 +15,7 @@ namespace SuperSpaceArcade
 
 		public static event PlayerSpawnHandler onPlayerSpawned;
 
-		public delegate void PlayerAddPointsHandler(int points,Vector3 sourcePosition,Quaternion sourceRotation);
+		public delegate void PlayerAddPointsHandler(int points,Vector3 sourcePosition,Quaternion sourceRotation,Transform target);
 
 		public static event PlayerAddPointsHandler onPlayerAddPoints;
 
@@ -39,6 +41,7 @@ namespace SuperSpaceArcade
 
 		public static void PlayerSpawned(TrackSpectator player)
 		{
+			EventManager.player = player;
 			onPlayerInvulnerable = null;
 
 			if (onPlayerSpawned != null)
@@ -46,10 +49,10 @@ namespace SuperSpaceArcade
 		}
 
 
-		public static void PlayerAddPoints(int points, Vector3 sourcePosition, Quaternion sourceRotation)
+		public static void PlayerAddPoints(int points, Vector3 sourcePosition, Quaternion sourceRotation, Transform target)
 		{
 			if (onPlayerAddPoints != null)
-				onPlayerAddPoints(points, sourcePosition, sourceRotation);
+				onPlayerAddPoints(points, sourcePosition, sourceRotation, player.transform);
 		}
 
 
