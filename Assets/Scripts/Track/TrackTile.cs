@@ -36,7 +36,7 @@ namespace SuperSpaceArcade
 
 		// poolName For The debris spawns
 		[HideInInspector]
-		public string debrisPoolName = "Spawns";
+		private string debrisPoolName = "Debris";
 
 		// The tiles 'stressLevel' indicates which difficulty level the game has
 		// to reach before this particular tile might get shown
@@ -100,7 +100,7 @@ namespace SuperSpaceArcade
 			// Despawn debris
 			Debris[] debris = this.cachedTransform.GetComponentsInChildren<Debris>();
 			foreach (Debris d in debris) {
-				PoolManager.Pools[this.debrisPoolName].Despawn(d.gameObject.transform, PoolManager.Pools[this.poolName].transform);
+				PoolManager.Pools[this.debrisPoolName].Despawn(d.gameObject.transform, PoolManager.Pools[this.debrisPoolName].transform);
 			}
 
 			PoolManager.Pools[this.poolName].Despawn(this.cachedTransform);

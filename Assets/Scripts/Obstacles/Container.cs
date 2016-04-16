@@ -17,7 +17,7 @@ namespace SuperSpaceArcade
 		public void OnSpawned()
 		{
 			if (!this.isSpawned) {
-				this.pool = PoolManager.Pools["Spawns"];
+				this.pool = PoolManager.Pools["Debris"];
 				this.isSpawned = true;
 			}
 		}

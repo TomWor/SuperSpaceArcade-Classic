@@ -34,7 +34,7 @@ namespace SuperSpaceArcade
 		{
 			if (!this.isSpawned) {
 
-				this.pool = PoolManager.Pools["Spawns"];
+				this.pool = PoolManager.Pools["Debris"];
 				EventManager.onPlayerInvulnerable += this.OnPlayerInvulnerable;
 
 				this.isSpawned = true;

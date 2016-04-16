@@ -58,7 +58,7 @@ namespace SuperSpaceArcade
 		// All active track tiles are in this list
 		private List<TrackTile> activeTrackTiles = new List<TrackTile>();
 
-		private TrackTile currentTrackTile;
+		public TrackTile currentTrackTile;
 
 		public float CurrentTrackTileVerticalOffset {
 			get {

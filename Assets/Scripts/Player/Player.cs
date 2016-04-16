@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine.Analytics;
 using UnityEngine.UI;
 using DarkTonic.MasterAudio;
+using PathologicalGames;
+
 
 namespace SuperSpaceArcade
 {
@@ -34,6 +36,7 @@ namespace SuperSpaceArcade
 		private GameObject gameOverUI;
 		private GameObject inGameUI;
 
+		private SpawnPool pool;
 
 		public void OnDisable()
 		{
@@ -44,6 +47,7 @@ namespace SuperSpaceArcade
 		public void Awake()
 		{
 			this.cachedTransform = this.transform;
+			this.pool = PoolManager.Pools["Debris"];
 		}
 
 
@@ -203,8 +207,11 @@ namespace SuperSpaceArcade
 			this.gameObject.GetComponent<ShipController>().enabled = false;
 			shipMesh.gameObject.SetActive(false);
 
-			GameObject shipExploded = Instantiate(explodePrefab, transform.position, Quaternion.identity) as GameObject;
-			Rigidbody[] rigidbodies = shipExploded.GetComponentsInChildren<Rigidbody>();
+			// Instantiate the exploded player ship and parent it to the current track tile
+			// so it cleans itself up when new game is started, like all other debris
+			Transform explodedPlayer = this.pool.Spawn(this.explodePrefab.transform, this.cachedTransform.position, Quaternion.identity, TrackGenerator.currentTrackTile.transform);
+
+			Rigidbody[] rigidbodies = explodedPlayer.transform.GetComponentsInChildren<Rigidbody>();
 
 			foreach (Rigidbody body in rigidbodies) {
 				//body.AddExplosionForce(Random.Range(1000, 2000), new Vector3(transform.position.x, transform.position.y, transform.position.z - 1.0f), Random.Range(2, 10), 300.0f);
