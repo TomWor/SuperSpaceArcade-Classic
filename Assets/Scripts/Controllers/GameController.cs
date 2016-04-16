@@ -13,6 +13,7 @@ namespace SuperSpaceArcade
 		public GameObject mainMenu, creditsScreen, gameOverUI, menuLogo, inGameUI;
 		public GameObject mainCamera;
 
+
 		private static int currentStressLevel = 0;
 
 		public static int CurrentStressLevel {
@@ -54,7 +55,6 @@ namespace SuperSpaceArcade
 			get { return player; }
 			set {
 				this.player = value;
-				EventManager.PlayerSpawned(value);
 			}
 		}
 
@@ -141,7 +141,6 @@ namespace SuperSpaceArcade
 		{
 			this.gameOverUI.SetActive(true);
 			this.gameOverUI.transform.Find("ScorePanel/Score").GetComponent<Text>().text = this.Player.points.ToString();
-			Destroy(this.playerObject);
 		}
 
 
