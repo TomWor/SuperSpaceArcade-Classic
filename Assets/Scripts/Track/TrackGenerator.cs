@@ -84,20 +84,6 @@ namespace SuperSpaceArcade
 
 		public static event TrackResetHandler onTrackReset;
 
-		public delegate void TrackCreatedHandler(TrackGenerator trackGenerator);
-
-		public static event TrackCreatedHandler onTrackCreated;
-
-
-		/*
-	     * Gets called when the Track Component has been created
-	     */
-		public static void TrackCreated(TrackGenerator trackGenerator)
-		{
-			if (onTrackCreated != null)
-				onTrackCreated(trackGenerator);
-		}
-
 
 		public void Start()
 		{
@@ -110,11 +96,11 @@ namespace SuperSpaceArcade
 			this.spawns.AddRange(this.LoadAndPoolSpawns("Spawns/Obstacles"));
 			this.spawns.AddRange(this.LoadAndPoolSpawns("Spawns/Decals"));
 
-			this.ResetTrack();
+			this.CreateTrack();
 		}
 
 
-		public void ResetTrack()
+		public void CreateTrack()
 		{
 			this.currentHorizontalOffset = 0;
 			this.currentVerticalOffset = 0;
@@ -131,7 +117,7 @@ namespace SuperSpaceArcade
 			this.currentTrackTile = this.addTrackTile(tileToInstantiate);
 
 			StartCoroutine(BuildTrack());
-			TrackGenerator.TrackCreated(this);
+			EventManager.TrackCreated(this);
 		}
 
 
@@ -244,12 +230,14 @@ namespace SuperSpaceArcade
 		public void OnEnable()
 		{
 			EventManager.onPlayerSpawned += this.OnPlayerSpawned;
+			EventManager.onPlayerDestroyed += this.OnPlayerDestroyed;
 		}
 
 
 		public void OnDisable()
 		{
 			EventManager.onPlayerSpawned -= this.OnPlayerSpawned;
+			EventManager.onPlayerDestroyed -= this.OnPlayerDestroyed;
 		}
 
 
@@ -257,6 +245,11 @@ namespace SuperSpaceArcade
 		{
 			this.player = player;
 			this.player.TrackGenerator = this;
+		}
+
+		public void OnPlayerDestroyed()
+		{
+			this.player = null;
 		}
 
 
@@ -340,7 +333,7 @@ namespace SuperSpaceArcade
 					}
 
 					GameObject tileToInstantiate;
-					tileToInstantiate = tilesLikelyhood[Random.Range(0, tilesLikelyhood.Count)];
+					tileToInstantiate = tilesLikelyhood[Random.Range(0, tilesLikelyhood.Count - 1)];
 
 					// Instantiate TrackTile
 					Vector3 lastPosition = lastTile.gameObject.transform.position;

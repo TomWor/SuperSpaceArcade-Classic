@@ -207,6 +207,21 @@ namespace SuperSpaceArcade
 			this.gameObject.GetComponent<ShipController>().enabled = false;
 			shipMesh.gameObject.SetActive(false);
 
+			// Reparent all score gameobjects to their pool
+			Score[] scores = this.cachedTransform.GetComponentsInChildren<Score>();
+			foreach (Score score in scores) {
+				score.transform.parent = PoolManager.Pools[score.PoolName].transform;
+			}
+
+			// Reparent all powerUp gameobjects to their pool
+			PowerUpEffect[] powerUpEffects = this.cachedTransform.GetComponentsInChildren<PowerUpEffect>();
+			foreach (PowerUpEffect powerUpEffect in powerUpEffects) {
+				powerUpEffect.transform.parent = PoolManager.Pools[powerUpEffect.PoolName].transform;
+			}
+			
+			EventManager.PlayerDestroyed();
+			Destroy(this.gameObject);
+
 			// Instantiate the exploded player ship and parent it to the current track tile
 			// so it cleans itself up when new game is started, like all other debris
 			Transform explodedPlayer = this.pool.Spawn(this.explodePrefab.transform, this.cachedTransform.position, Quaternion.identity, TrackGenerator.currentTrackTile.transform);

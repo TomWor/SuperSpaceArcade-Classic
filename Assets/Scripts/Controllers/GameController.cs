@@ -125,10 +125,11 @@ namespace SuperSpaceArcade
 			this.mainMenu.SetActive(false);
 			this.mainCamera.GetComponent<MenuCamera>().enabled = false;
 
+
 			this.playerObject = Instantiate(Resources.Load("Player", typeof(GameObject))) as GameObject;
 			this.Player = this.playerObject.GetComponent<Player>();
 			this.Player.TrackGenerator = this.TrackGenerator;
-			this.TrackGenerator.ResetTrack();
+			this.TrackGenerator.CreateTrack();
 
 			EventManager.PlayerSpawned(this.Player);
 
@@ -141,6 +142,7 @@ namespace SuperSpaceArcade
 		{
 			this.gameOverUI.SetActive(true);
 			this.gameOverUI.transform.Find("ScorePanel/Score").GetComponent<Text>().text = this.Player.points.ToString();
+
 		}
 
 

@@ -7,29 +7,49 @@ namespace SuperSpaceArcade
 	{
 		public static TrackSpectator player;
 
+
 		public delegate void GameStartHandler();
 
 		public static event GameStartHandler onGameStart;
+
 
 		public delegate void PlayerSpawnHandler(TrackSpectator player);
 
 		public static event PlayerSpawnHandler onPlayerSpawned;
 
+
+		public delegate void PlayerDestroyedHandler();
+
+		public static event PlayerDestroyedHandler onPlayerDestroyed;
+
+
 		public delegate void PlayerAddPointsHandler(int points,Vector3 sourcePosition,Quaternion sourceRotation,Transform target);
 
 		public static event PlayerAddPointsHandler onPlayerAddPoints;
+
 
 		public delegate void PlayerInvulnerableHandler(bool invulnerable);
 
 		public static event PlayerInvulnerableHandler onPlayerInvulnerable;
 
+
+		// Track border color changed, stress level has increased
 		public delegate void TrackBorderColorChangedHandler(Color color);
 
 		public static event TrackBorderColorChangedHandler onTrackBorderColorChanged;
 
+
+		// Player ship got destroyed
 		public delegate void GameOverHandler();
 
 		public static event GameOverHandler onGameOver;
+
+
+		// Track gets created, new game starts
+		public delegate void TrackCreatedHandler(TrackGenerator trackGenerator);
+
+		public static event TrackCreatedHandler onTrackCreated;
+
 
 
 		public static void GameStart()
@@ -46,6 +66,16 @@ namespace SuperSpaceArcade
 
 			if (onPlayerSpawned != null)
 				onPlayerSpawned(player);
+		}
+
+
+		public static void PlayerDestroyed()
+		{
+			EventManager.player = null;
+			onPlayerInvulnerable = null;
+
+			if (onPlayerDestroyed != null)
+				onPlayerDestroyed();
 		}
 
 
@@ -67,6 +97,16 @@ namespace SuperSpaceArcade
 		{
 			if (onTrackBorderColorChanged != null)
 				onTrackBorderColorChanged(color);
+		}
+
+
+		/*
+	     * Gets called when the Track Component has been created
+	     */
+		public static void TrackCreated(TrackGenerator trackGenerator)
+		{
+			if (onTrackCreated != null)
+				onTrackCreated(trackGenerator);
 		}
 
 

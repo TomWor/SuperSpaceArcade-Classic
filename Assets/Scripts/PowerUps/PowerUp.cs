@@ -17,7 +17,11 @@ namespace SuperSpaceArcade
 
 		private bool collected = false;
 
-		private string effectsPoolName = "Effects";
+		private string poolName = "Effects";
+
+		public string PoolName {
+			get { return this.poolName; }
+		}
 
 
 		void OnDespawned()
@@ -49,7 +53,7 @@ namespace SuperSpaceArcade
 			this.GetComponentInChildren<MeshRenderer>().enabled = false;
 
 			// Spawn effect prefab
-			PoolManager.Pools[this.effectsPoolName].Spawn(this.effectPrefab.transform, other.transform.position, Quaternion.identity, other.transform);
+			PoolManager.Pools[this.poolName].Spawn(this.effectPrefab.transform, other.transform.position, Quaternion.identity, other.transform);
 		}
 
 	}

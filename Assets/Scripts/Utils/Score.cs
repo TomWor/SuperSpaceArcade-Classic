@@ -12,6 +12,10 @@ public class Score : MonoBehaviour
 	public float lifespan = 2.0f;
 	public int speed = 30;
 
+	public string PoolName {
+		get { return this.poolName; }
+	}
+
 	private int _score;
 
 	public int ScoreValue {

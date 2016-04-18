@@ -14,12 +14,14 @@ namespace SuperSpaceArcade
 		public void OnEnable()
 		{
 			EventManager.onPlayerSpawned += this.OnPlayerSpawned;
+			EventManager.onPlayerDestroyed += this.OnPlayerDestroyed;
 		}
 
 
 		public void OnDisable()
 		{
 			EventManager.onPlayerSpawned -= this.OnPlayerSpawned;
+			EventManager.onPlayerDestroyed -= this.OnPlayerDestroyed;
 			StopCoroutine("UpdateScore");
 		}
 
@@ -30,6 +32,13 @@ namespace SuperSpaceArcade
 			this.scoreUI = GameObject.FindWithTag("InGameUI").transform.Find("Score").GetComponent<Text>();
 
 			StartCoroutine(UpdateScore());
+		}
+
+
+		public void OnPlayerDestroyed()
+		{
+			StopCoroutine("UpdateScore");
+			this.player = null;
 		}
 
 

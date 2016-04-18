@@ -21,6 +21,10 @@ namespace SuperSpaceArcade
 
 		private string poolName = "Effects";
 
+		public string PoolName {
+			get { return this.poolName; }
+		}
+
 
 		public void Awake()
 		{

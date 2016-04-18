@@ -20,7 +20,7 @@ namespace SuperSpaceArcade
 
 		public void OnEnable()
 		{
-			TrackGenerator.onTrackCreated += this.OnTrackCreated;
+			EventManager.onTrackCreated += this.OnTrackCreated;
 		}
 
 
