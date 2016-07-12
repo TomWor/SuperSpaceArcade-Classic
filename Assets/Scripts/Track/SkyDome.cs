@@ -35,12 +35,30 @@ namespace SuperSpaceArcade
 		public void OnEnable()
 		{
 			//EventManager.onTrackBorderColorChanged += this.OnTrackBorderColorChanged;
+			EventManager.onPlayerSpawned += this.OnPlayerSpawned;
+			//EventManager.onPlayerDestroyed += this.OnPlayerDestroyed;
+			EventManager.onMenuEnter += this.OnMenuEnter;
 		}
 
 
 		public void OnDisable()
 		{
 			//EventManager.onTrackBorderColorChanged -= this.OnTrackBorderColorChanged;
+			EventManager.onPlayerSpawned -= this.OnPlayerSpawned;
+			//EventManager.onPlayerDestroyed -= this.OnPlayerDestroyed;
+			EventManager.onMenuEnter -= this.OnMenuEnter;
+		}
+
+
+		public void OnPlayerSpawned(TrackSpectator player)
+		{
+			this.GetComponent<TransformConstraint>().target = player.transform;
+		}
+
+
+		public void OnMenuEnter()
+		{
+			this.GetComponent<TransformConstraint>().target = Camera.main.transform;
 		}
 
 

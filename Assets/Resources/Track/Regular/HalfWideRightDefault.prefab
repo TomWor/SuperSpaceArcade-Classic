@@ -112,6 +112,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 480300}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &454344
 Transform:
   m_ObjectHideFlags: 1
@@ -124,6 +125,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 480300}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &456828
 Transform:
   m_ObjectHideFlags: 1
@@ -136,6 +138,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 480300}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &460060
 Transform:
   m_ObjectHideFlags: 1
@@ -148,6 +151,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 480300}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &480300
 Transform:
   m_ObjectHideFlags: 1
@@ -165,6 +169,7 @@ Transform:
   - {fileID: 454344}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &491134
 Transform:
   m_ObjectHideFlags: 1
@@ -177,6 +182,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 480300}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2336968
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -186,13 +192,15 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 27f89cbe35f5547a6974610b667f1733, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
@@ -236,7 +244,7 @@ MonoBehaviour:
   spawnPowerUps: 1
   spawnEnemies: 1
   spawnObstacles: 1
-  spawnDecals: 1
+  spawnDecals: 0
 --- !u!114 &11424008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,6 +278,7 @@ MonoBehaviour:
     targetColor: {r: 0, g: 0, b: 0, a: 0}
     currentColor: {r: 0, g: 0, b: 0, a: 0}
     targetVertices: 
+    meshColors: []
 --- !u!114 &11480180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -313,7 +322,6 @@ MonoBehaviour:
   horizontalOffset: 0
   inConnector: 1
   poolName: Track
-  debrisPoolName: Spawns
   stressLevel: 2
   outConnector: 1
   likelyhood: 5
@@ -331,7 +339,7 @@ MonoBehaviour:
   spawnPowerUps: 1
   spawnEnemies: 1
   spawnObstacles: 1
-  spawnDecals: 1
+  spawnDecals: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

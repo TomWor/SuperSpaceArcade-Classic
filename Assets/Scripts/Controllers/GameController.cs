@@ -160,6 +160,8 @@ namespace SuperSpaceArcade
 			this.mainCamera.GetComponent<MenuCamera>().enabled = true;
 			this.creditsScreen.SetActive(false);
 			this.inGameUI.SetActive(false);
+
+			this.TrackGenerator.player = this.mainCamera.GetComponent<MenuCamera>();
 			this.TrackGenerator.CreateTrack();
 		}
 

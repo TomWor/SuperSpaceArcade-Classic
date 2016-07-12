@@ -164,6 +164,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 495884}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &404530
 Transform:
   m_ObjectHideFlags: 1
@@ -176,6 +177,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 495884}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &417092
 Transform:
   m_ObjectHideFlags: 1
@@ -188,6 +190,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 495884}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &438948
 Transform:
   m_ObjectHideFlags: 1
@@ -200,6 +203,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 495884}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &448948
 Transform:
   m_ObjectHideFlags: 1
@@ -212,6 +216,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 495884}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &456846
 Transform:
   m_ObjectHideFlags: 1
@@ -224,6 +229,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 495884}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &464116
 Transform:
   m_ObjectHideFlags: 1
@@ -236,6 +242,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 495884}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &492504
 Transform:
   m_ObjectHideFlags: 1
@@ -248,6 +255,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 495884}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &495884
 Transform:
   m_ObjectHideFlags: 1
@@ -268,6 +276,7 @@ Transform:
   - {fileID: 417092}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2306724
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -277,13 +286,15 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 27f89cbe35f5547a6974610b667f1733, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
@@ -303,13 +314,15 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 27f89cbe35f5547a6974610b667f1733, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
@@ -374,7 +387,6 @@ MonoBehaviour:
   horizontalOffset: 0
   inConnector: 4
   poolName: Track
-  debrisPoolName: Spawns
   stressLevel: 0
   outConnector: 0
   likelyhood: 5
@@ -403,7 +415,7 @@ MonoBehaviour:
   spawnPowerUps: 1
   spawnEnemies: 1
   spawnObstacles: 1
-  spawnDecals: 1
+  spawnDecals: 0
 --- !u!114 &11450956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -429,7 +441,7 @@ MonoBehaviour:
   spawnPowerUps: 1
   spawnEnemies: 1
   spawnObstacles: 1
-  spawnDecals: 1
+  spawnDecals: 0
 --- !u!114 &11456712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -463,6 +475,7 @@ MonoBehaviour:
     targetColor: {r: 0, g: 0, b: 0, a: 0}
     currentColor: {r: 0, g: 0, b: 0, a: 0}
     targetVertices: 
+    meshColors: []
 --- !u!114 &11475960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -477,7 +490,7 @@ MonoBehaviour:
   spawnPowerUps: 1
   spawnEnemies: 1
   spawnObstacles: 1
-  spawnDecals: 1
+  spawnDecals: 0
 --- !u!114 &11489172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -511,6 +524,7 @@ MonoBehaviour:
     targetColor: {r: 0, g: 0, b: 0, a: 0}
     currentColor: {r: 0, g: 0, b: 0, a: 0}
     targetVertices: 
+    meshColors: []
 --- !u!114 &11497464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -525,7 +539,7 @@ MonoBehaviour:
   spawnPowerUps: 1
   spawnEnemies: 1
   spawnObstacles: 1
-  spawnDecals: 1
+  spawnDecals: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
