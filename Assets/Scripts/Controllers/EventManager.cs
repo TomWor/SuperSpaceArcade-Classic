@@ -13,6 +13,11 @@ namespace SuperSpaceArcade
 		public static event GameStartHandler onGameStart;
 
 
+		public delegate void MenuEnterHandler();
+
+		public static event MenuEnterHandler onMenuEnter;
+
+
 		public delegate void PlayerSpawnHandler(TrackSpectator player);
 
 		public static event PlayerSpawnHandler onPlayerSpawned;
@@ -64,6 +69,13 @@ namespace SuperSpaceArcade
 		{
 			if (onGameStart != null)
 				onGameStart();
+		}
+
+
+		public static void MenuEnter()
+		{
+			if (onMenuEnter != null)
+				onMenuEnter();
 		}
 
 

@@ -102,6 +102,7 @@ namespace SuperSpaceArcade
 		{
 			EventManager.onGameStart += this.OnGameStart;
 			EventManager.onGameOver += this.OnGameOver;
+			EventManager.onMenuEnter += this.OnMenuEnter;
 		}
 
 
@@ -109,6 +110,7 @@ namespace SuperSpaceArcade
 		{
 			EventManager.onGameStart -= this.OnGameStart;
 			EventManager.onGameOver -= this.OnGameOver;
+			EventManager.onMenuEnter -= this.OnMenuEnter;
 		}
 
 
@@ -120,6 +122,7 @@ namespace SuperSpaceArcade
 			this.mainMenu.SetActive(false);
 			this.mainCamera.GetComponent<MenuCamera>().enabled = false;
 			this.creditsScreen.SetActive(false);
+			this.inGameUI.SetActive(true);
 
 			this.playerObject = Instantiate(Resources.Load("Player", typeof(GameObject))) as GameObject;
 			this.Player = this.playerObject.GetComponent<Player>();
@@ -132,12 +135,32 @@ namespace SuperSpaceArcade
 			StartCoroutine(this.UpdateStressLevel());
 		}
 
-
 		public void OnGameOver()
+		{
+			this.inGameUI.SetActive(false);
+			Invoke("EnableGameOverUI", 2);
+
+			this.StopAllCoroutines();
+		}
+
+
+		public void EnableGameOverUI()
 		{
 			this.gameOverUI.SetActive(true);
 			this.gameOverUI.transform.Find("ScorePanel/Score").GetComponent<Text>().text = this.Player.points.ToString();
-			this.StopAllCoroutines();
+		}
+
+
+		public void OnMenuEnter()
+		{
+			GameController.currentTrackBorderColor = this.stressLevelColors[0];
+
+			this.gameOverUI.SetActive(false);
+			this.mainMenu.SetActive(true);
+			this.mainCamera.GetComponent<MenuCamera>().enabled = true;
+			this.creditsScreen.SetActive(false);
+			this.inGameUI.SetActive(false);
+			this.TrackGenerator.CreateTrack();
 		}
 
 
