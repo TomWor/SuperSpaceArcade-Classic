@@ -10,20 +10,20 @@ namespace SuperSpaceArcade
 	public class TrackTile : MonoBehaviour
 	{
 		/**
-    * Lenght of the individual track tile
-    */
+	    * Length of the individual track tile
+	    */
 		public int trackTileLength = 0;
 
 
 		/**
-    * Vertical offset for next tile
-    */
+	    * Vertical offset for next tile
+	    */
 		public int verticalOffset = 0;
 
 
 		/**
-    * Horizontal offset for next tile
-    */
+	    * Horizontal offset for next tile
+	    */
 		public int horizontalOffset = 0;
 
 
@@ -65,8 +65,8 @@ namespace SuperSpaceArcade
 
 
 		/**
-    * Cache properties
-    */
+	    * Cache properties
+	    */
 		public void OnSpawned()
 		{
 			this.sideSpawnPoints = this.cachedTransform.GetComponentsInChildren<SideSpawnPoint>();
@@ -85,8 +85,8 @@ namespace SuperSpaceArcade
 
 
 		/**
-    * Despawns this tile form track spawnPool
-    */
+	    * Despawns this tile form track spawnPool
+	    */
 		public void Despawn()
 		{
 			foreach (SpawnPoint spawnPoint in this.spawnPoints) {

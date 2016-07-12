@@ -23,8 +23,6 @@ namespace SuperSpaceArcade
 			}
 		}
 
-		public static Color currentTrackBorderColor;
-
 
 		private TrackGenerator trackGenerator;
 
@@ -36,17 +34,7 @@ namespace SuperSpaceArcade
 		}
 
 
-		protected static Color trackBorderColor;
-
-		public static Color TrackBorderColor {
-			get { return trackBorderColor; }
-			set {
-				if (GameController.trackBorderColor != value) {
-					GameController.trackBorderColor = value;
-					EventManager.TrackBorderColorChanged(value);
-				}
-			}
-		}
+		public static Color currentTrackBorderColor;
 
 
 		private Player player;
@@ -67,6 +55,12 @@ namespace SuperSpaceArcade
 				GameController.playerInvulnerable = value;
 				EventManager.PlayerInvulnerable(value);
 			}
+		}
+
+
+		public void Awake()
+		{
+			GameController.currentTrackBorderColor = this.stressLevelColors[0];
 		}
 
 
@@ -120,11 +114,12 @@ namespace SuperSpaceArcade
 
 		public void OnGameStart()
 		{
+			GameController.currentTrackBorderColor = this.stressLevelColors[0];
 
 			this.gameOverUI.SetActive(false);
 			this.mainMenu.SetActive(false);
 			this.mainCamera.GetComponent<MenuCamera>().enabled = false;
-
+			this.creditsScreen.SetActive(false);
 
 			this.playerObject = Instantiate(Resources.Load("Player", typeof(GameObject))) as GameObject;
 			this.Player = this.playerObject.GetComponent<Player>();
@@ -142,14 +137,14 @@ namespace SuperSpaceArcade
 		{
 			this.gameOverUI.SetActive(true);
 			this.gameOverUI.transform.Find("ScorePanel/Score").GetComponent<Text>().text = this.Player.points.ToString();
-
+			this.StopAllCoroutines();
 		}
 
 
 		public void setInitialStressLevel()
 		{
 			GameController.currentStressLevel = 0;
-			GameController.currentTrackBorderColor = this.stressLevelColors[GameController.currentStressLevel];
+			GameController.currentTrackBorderColor = this.stressLevelColors[0];
 		}
 
 

@@ -19,6 +19,10 @@ namespace SuperSpaceArcade
 		// Is done to avoid float overflow errors if the track gets to long
 		public int trackResetZ = 100;
 
+		// Bool gets set to true when initial track is built
+		// Fires the OnTrackReady method on the EventManager
+		public bool trackReady = false;
+
 		// True if track reset is in progress
 		// Every PowerUp / Enemy collider hit needs to check for this static variable,
 		// otherwise the track reset might mess with the physics collisions
@@ -102,6 +106,9 @@ namespace SuperSpaceArcade
 
 		public void CreateTrack()
 		{
+			// Stop track building Coroutine if running
+			this.StopAllCoroutines();
+
 			this.currentHorizontalOffset = 0;
 			this.currentVerticalOffset = 0;
 			this.currentTrackPosition = 0;
@@ -116,7 +123,7 @@ namespace SuperSpaceArcade
 			tileToInstantiate = startTileItems[Random.Range(0, this.startTileItems.Count)].transform;
 			this.currentTrackTile = this.addTrackTile(tileToInstantiate);
 
-			StartCoroutine(BuildTrack());
+			this.StartCoroutine(BuildTrack());
 			EventManager.TrackCreated(this);
 		}
 
@@ -282,8 +289,8 @@ namespace SuperSpaceArcade
 		public void LateUpdate()
 		{
 
-			// Set current TrackTile to measure current falling deatch offset
-			// and Camera offset for Menu screen
+			// Set current TrackTile to measure current falling death offset
+			// and camera offset for menu screen
 			TrackTile currentTrackTileResult = this.activeTrackTiles.Find(tile => tile.gameObject.transform.position.z < 0 && tile.gameObject.transform.position.z + tile.trackTileLength > 0);
 			if (currentTrackTileResult)
 				this.currentTrackTile = currentTrackTileResult;
@@ -342,9 +349,16 @@ namespace SuperSpaceArcade
 
 					Vector3 nextPosition = new Vector3(this.currentHorizontalOffset, this.currentVerticalOffset, lastPosition.z + lastTile.trackTileLength);
 					this.addTrackTile(tileToInstantiate.transform, nextPosition);
+
+				} else {
+
+					if (!this.trackReady) {
+						this.trackReady = true;
+						EventManager.TrackReady();
+					}
 				}
 
-				yield return new WaitForSeconds(0.1f);
+				yield return new WaitForEndOfFrame();
 			}
 		}
 

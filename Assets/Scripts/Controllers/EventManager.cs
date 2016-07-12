@@ -39,16 +39,24 @@ namespace SuperSpaceArcade
 		public static event TrackBorderColorChangedHandler onTrackBorderColorChanged;
 
 
+		// Track gets created, new game starts
+		public delegate void TrackCreatedHandler(TrackGenerator trackGenerator);
+
+		public static event TrackCreatedHandler onTrackCreated;
+
+
+		// Fired when track is finished building for the first time
+		public delegate void TrackReadyHandler();
+
+		public static event TrackReadyHandler onTrackReady;
+
+
 		// Player ship got destroyed
 		public delegate void GameOverHandler();
 
 		public static event GameOverHandler onGameOver;
 
 
-		// Track gets created, new game starts
-		public delegate void TrackCreatedHandler(TrackGenerator trackGenerator);
-
-		public static event TrackCreatedHandler onTrackCreated;
 
 
 
@@ -107,6 +115,13 @@ namespace SuperSpaceArcade
 		{
 			if (onTrackCreated != null)
 				onTrackCreated(trackGenerator);
+		}
+
+
+		public static void TrackReady()
+		{
+			if (onTrackReady != null)
+				onTrackReady();
 		}
 
 

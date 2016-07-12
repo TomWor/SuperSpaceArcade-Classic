@@ -10,7 +10,7 @@ namespace SuperSpaceArcade
 
 		public void BackToMenu()
 		{
-			SceneManager.LoadScene("Menu");
+			SceneManager.LoadScene("Game");
 		}
 
 	}

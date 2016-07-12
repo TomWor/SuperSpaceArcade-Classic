@@ -101,6 +101,7 @@ GameObject:
   - 222: {fileID: 95447406}
   - 114: {fileID: 95447405}
   - 114: {fileID: 95447404}
+  - 114: {fileID: 95447407}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -166,7 +167,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 95447407}
         m_MethodName: HideCredits
         m_Mode: 1
         m_Arguments:
@@ -212,6 +213,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 95447402}
+--- !u!114 &95447407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 95447402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b8282f9316c429ca963fd508e46497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &97782607
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +326,7 @@ MeshRenderer:
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_Materials:
@@ -504,7 +517,6 @@ MonoBehaviour:
   soundGroupVariationTemplate: {fileID: 400000, guid: 08eea2d8c4572c7479da53cfbc14bde6,
     type: 2}
   groupBuses: []
-  busesShownInNarrow: 1
   groupByBus: 1
   showGizmos: 1
   showAdvancedSettings: 0
@@ -593,6 +605,19 @@ MonoBehaviour:
   saveRuntimeChanges: 0
   prioritizeOnDistance: 0
   rePrioritizeEverySecIndex: 0
+  useOcclusion: 0
+  reOccludeEverySecIndex: 1
+  occlusionMaxCutoffFreq: 0
+  occlusionMinCutoffFreq: 22000
+  occlusionSelectType: 0
+  occlusionUseLayerMask: 0
+  occlusionLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  occlusionShowRaycasts: 1
+  occlusionShowCategories: 0
+  occlusionRaycastMode: 0
+  occlusionIncludeStartRaycast2DCollider: 1
   visualAdvancedExpanded: 0
   logAdvancedExpanded: 0
   showFadingSettings: 0
@@ -610,7 +635,7 @@ MonoBehaviour:
   musicDuckingSounds: []
   defaultRiseVolStart: 0.5
   defaultUnduckTime: 1
-  defaultDuckedVolumeMultiplier: 0.5
+  defaultDuckedVolumeCut: -6
   crossFadeTime: 1
   _masterPlaylistVolume: 1
   showGroupSelect: 0
@@ -645,7 +670,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 110474352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -364, y: 371, z: -264}
+  m_LocalPosition: {x: 67, y: 106, z: -132}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 124621291}
@@ -789,6 +814,7 @@ MonoBehaviour:
   useDialogFadeOut: 0
   dialogFadeOutTime: 0.5
   curVariationSequence: 0
+  useNoRepeatRefill: 1
   useInactivePeriodPoolRefill: 0
   inactivePeriodSeconds: 5
   groupVariations:
@@ -808,10 +834,12 @@ MonoBehaviour:
   voiceLimitCount: 1
   targetDespawnedBehavior: 0
   despawnFadeTime: 1
+  isUsingOcclusion: 0
   isSoloed: 0
   isMuted: 0
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
+  frames: 0
 --- !u!1 &133401111
 GameObject:
   m_ObjectHideFlags: 1
@@ -1456,6 +1484,8 @@ MonoBehaviour:
   mixerChannel: {fileID: 0}
   spatialBlendType: 0
   spatialBlend: 0
+  initializedEventExpanded: 0
+  initializedCustomEvent: 
   songChangedEventExpanded: 0
   songChangedCustomEvent: 
   songEndedEventExpanded: 0
@@ -2598,6 +2628,7 @@ MonoBehaviour:
   useDialogFadeOut: 0
   dialogFadeOutTime: 0.5
   curVariationSequence: 0
+  useNoRepeatRefill: 1
   useInactivePeriodPoolRefill: 0
   inactivePeriodSeconds: 5
   groupVariations:
@@ -2617,10 +2648,12 @@ MonoBehaviour:
   voiceLimitCount: 1
   targetDespawnedBehavior: 0
   despawnFadeTime: 1
+  isUsingOcclusion: 0
   isSoloed: 0
   isMuted: 0
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
+  frames: 0
 --- !u!1 &933997335
 GameObject:
   m_ObjectHideFlags: 0
@@ -3099,6 +3132,7 @@ MonoBehaviour:
   useDialogFadeOut: 0
   dialogFadeOutTime: 0.5
   curVariationSequence: 0
+  useNoRepeatRefill: 1
   useInactivePeriodPoolRefill: 0
   inactivePeriodSeconds: 5
   groupVariations:
@@ -3118,10 +3152,12 @@ MonoBehaviour:
   voiceLimitCount: 1
   targetDespawnedBehavior: 0
   despawnFadeTime: 1
+  isUsingOcclusion: 0
   isSoloed: 0
   isMuted: 0
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
+  frames: 0
 --- !u!1 &1009074640
 GameObject:
   m_ObjectHideFlags: 0
@@ -3712,6 +3748,7 @@ MonoBehaviour:
   useDialogFadeOut: 0
   dialogFadeOutTime: 0.5
   curVariationSequence: 0
+  useNoRepeatRefill: 1
   useInactivePeriodPoolRefill: 0
   inactivePeriodSeconds: 5
   groupVariations:
@@ -3731,10 +3768,12 @@ MonoBehaviour:
   voiceLimitCount: 1
   targetDespawnedBehavior: 0
   despawnFadeTime: 1
+  isUsingOcclusion: 0
   isSoloed: 0
   isMuted: 0
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
+  frames: 0
 --- !u!1 &1279592644
 GameObject:
   m_ObjectHideFlags: 0
@@ -4470,6 +4509,7 @@ MonoBehaviour:
   useDialogFadeOut: 0
   dialogFadeOutTime: 0.5
   curVariationSequence: 0
+  useNoRepeatRefill: 1
   useInactivePeriodPoolRefill: 0
   inactivePeriodSeconds: 5
   groupVariations:
@@ -4489,10 +4529,12 @@ MonoBehaviour:
   voiceLimitCount: 1
   targetDespawnedBehavior: 0
   despawnFadeTime: 1
+  isUsingOcclusion: 0
   isSoloed: 0
   isMuted: 0
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
+  frames: 0
 --- !u!1 &1572277322
 GameObject:
   m_ObjectHideFlags: 0

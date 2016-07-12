@@ -25,6 +25,11 @@ namespace SuperSpaceArcade
 		public void OnDisable()
 		{
 			EventManager.onTrackBorderColorChanged -= this.OnTrackBorderColorChanged;
+
+			// Revert to 
+			foreach (ChangeVertexColor vertexColorComponent in this.vertexColorComponents) {
+				vertexColorComponent.ResetItemColor("TrackBorder");
+			}
 		}
 
 
@@ -32,14 +37,17 @@ namespace SuperSpaceArcade
 		{
 			foreach (ChangeVertexColor vertexColorComponent in this.vertexColorComponents) {
 				vertexColorComponent.ChangeColor("TrackBorder", color);
+				//Debug.Log("OnTrackBorderColorChanged: " + color);
 			}
 		}
 
 
 		public void OnSpawned()
 		{
-			this.OnTrackBorderColorChanged(GameController.currentTrackBorderColor);
+			foreach (ChangeVertexColor vertexColorComponent in this.vertexColorComponents) {
+				//Debug.Log("Setting " + this.gameObject.name + " border to color: " + GameController.currentTrackBorderColor);
+				vertexColorComponent.SetItemColor("TrackBorder", GameController.currentTrackBorderColor);
+			}
 		}
 	}
-
 }
