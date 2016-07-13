@@ -88,8 +88,8 @@ namespace SuperSpaceArcade
 			this.gameOverUI = GameObject.FindWithTag("GameOverUI");
 			this.gameOverUI.SetActive(false);
 
-			this.menuLogo = GameObject.FindWithTag("MenuLogo");
-			this.menuLogo.SetActive(false);
+			//this.menuLogo = GameObject.FindWithTag("MenuLogo");
+			//this.menuLogo.SetActive(false);
 
 			this.inGameUI = GameObject.FindWithTag("InGameUI");
 			this.inGameUI.SetActive(false);

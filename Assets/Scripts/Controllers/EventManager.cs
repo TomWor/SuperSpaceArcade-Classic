@@ -101,7 +101,7 @@ namespace SuperSpaceArcade
 
 		public static void PlayerAddPoints(int points, Vector3 sourcePosition, Quaternion sourceRotation, Transform target)
 		{
-			if (onPlayerAddPoints != null)
+			if (onPlayerAddPoints != null && player)
 				onPlayerAddPoints(points, sourcePosition, sourceRotation, player.transform);
 		}
 
