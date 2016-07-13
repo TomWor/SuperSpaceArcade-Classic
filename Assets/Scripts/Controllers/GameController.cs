@@ -118,6 +118,9 @@ namespace SuperSpaceArcade
 		{
 			GameController.currentTrackBorderColor = this.stressLevelColors[0];
 
+			this.setInitialStressLevel();
+			StartCoroutine(this.UpdateStressLevel());
+
 			this.gameOverUI.SetActive(false);
 			this.mainMenu.SetActive(false);
 			this.mainCamera.GetComponent<MenuCamera>().enabled = false;
@@ -130,9 +133,6 @@ namespace SuperSpaceArcade
 			this.TrackGenerator.CreateTrack();
 
 			EventManager.PlayerSpawned(this.Player);
-
-			this.setInitialStressLevel();
-			StartCoroutine(this.UpdateStressLevel());
 		}
 
 		public void OnGameOver()

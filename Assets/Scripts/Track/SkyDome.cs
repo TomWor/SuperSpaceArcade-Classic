@@ -6,7 +6,7 @@ namespace SuperSpaceArcade
 {
 	public class SkyDome : MonoBehaviour
 	{
-		private Color originalSkyColor = Color.white;
+		private Color originalSkyColor;
 		private Color targetSkyColor;
 		private Color currentSkyColor;
 
@@ -22,9 +22,10 @@ namespace SuperSpaceArcade
 		public void Awake()
 		{
 			this.cachedMeshRenderer = this.GetComponent<MeshRenderer>();
+			this.originalSkyColor = new Color(0.9f, 0.95f, 1.0f);
 			this.currentSkyColor = this.originalSkyColor;
 			this.targetSkyColor = this.originalSkyColor;
-			this.currentAmbientColor = new Color(0.9f, 0.95f, 1.0f);
+			this.currentAmbientColor = this.originalSkyColor;
 			this.sun = GameObject.FindWithTag("Sun").GetComponent<Light>();
 
 			this.cachedMeshRenderer.sharedMaterial.color = this.currentSkyColor;
@@ -34,7 +35,8 @@ namespace SuperSpaceArcade
 
 		public void OnEnable()
 		{
-			//EventManager.onTrackBorderColorChanged += this.OnTrackBorderColorChanged;
+			EventManager.onTrackBorderColorChanged += this.OnTrackBorderColorChanged;
+			EventManager.onGameStart += this.OnGameStart;
 			EventManager.onPlayerSpawned += this.OnPlayerSpawned;
 			//EventManager.onPlayerDestroyed += this.OnPlayerDestroyed;
 			EventManager.onMenuEnter += this.OnMenuEnter;
@@ -43,7 +45,8 @@ namespace SuperSpaceArcade
 
 		public void OnDisable()
 		{
-			//EventManager.onTrackBorderColorChanged -= this.OnTrackBorderColorChanged;
+			EventManager.onTrackBorderColorChanged -= this.OnTrackBorderColorChanged;
+			EventManager.onGameStart -= this.OnGameStart;
 			EventManager.onPlayerSpawned -= this.OnPlayerSpawned;
 			//EventManager.onPlayerDestroyed -= this.OnPlayerDestroyed;
 			EventManager.onMenuEnter -= this.OnMenuEnter;
@@ -59,6 +62,7 @@ namespace SuperSpaceArcade
 		public void OnMenuEnter()
 		{
 			this.GetComponent<TransformConstraint>().target = Camera.main.transform;
+			this.ResetColor();
 		}
 
 
@@ -74,6 +78,22 @@ namespace SuperSpaceArcade
 				RenderSettings.ambientLight = this.currentAmbientColor;
 			}
 
+		}
+
+
+		public void ResetColor()
+		{
+			this.currentSkyColor = this.originalSkyColor;
+			this.cachedMeshRenderer.sharedMaterial.color = this.originalSkyColor;
+
+			this.currentAmbientColor = this.originalSkyColor;
+			RenderSettings.ambientLight = this.originalSkyColor;
+		}
+
+
+		public void OnGameStart()
+		{
+			this.ResetColor();
 		}
 
 
