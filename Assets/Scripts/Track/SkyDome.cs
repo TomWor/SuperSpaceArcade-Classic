@@ -84,9 +84,11 @@ namespace SuperSpaceArcade
 		public void ResetColor()
 		{
 			this.currentSkyColor = this.originalSkyColor;
+			this.targetSkyColor = this.originalSkyColor;
 			this.cachedMeshRenderer.sharedMaterial.color = this.originalSkyColor;
 
 			this.currentAmbientColor = this.originalSkyColor;
+			this.targetAmbientColor = this.originalSkyColor;
 			RenderSettings.ambientLight = this.originalSkyColor;
 		}
 
